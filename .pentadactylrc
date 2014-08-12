@@ -11,7 +11,7 @@ map -count -description='scroll up 10 lines' -modes=n,v k -builtin <count>10<scr
 map -count -description='previous tab' -modes=n,v K -builtin <count><C-p>
 set followhints=1
 set guioptions=bCrsn
-set passkeys=www.google.com/search:<up><down><left><right>,mail.google.com:asdqeryuiophjklzxcvnm\,./?!#[]{}_<up><down><left><right><esc><S-t>,gs,gi,gt,gd,ga,gc,gk,gl,*a,*n,*r,*u,*s,*t,hm,ha,hi,hc,gp,hp,plus.google.com:<left><right>jkorlv
+set passkeys=www.google.com/search:<up><down><left><right>,mail.google.com:asdqeryuiophjklzxcvnm\,./?!#[]{}_<up><down><left><right><esc><S-t>,gs,gi,gt,gd,ga,gc,gk,gl,*a,*n,*r,*u,*s,*t,hm,ha,hi,hc,gp,hp,plus.google.com:<left><right>jkorlv,github.com:?jksxo<Return>,gn,gc,gp,gw
 set scrolltime=50
 
 " vim: set ft=pentadactyl:

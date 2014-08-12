@@ -45,6 +45,11 @@ syntax enable
 colorscheme slate
 set background=dark
 
+"enable backup files, and put backup and swap files in ~/.vimtmp
+set backup
+set backupdir=~/.vimtmp
+set dir=~/.vimtmp
+
 "line numbering on
 set number
 

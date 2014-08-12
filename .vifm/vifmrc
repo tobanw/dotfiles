@@ -165,20 +165,18 @@ filextype *.djvu zathura %f &
 
 " Audio
 filetype *.wav,*.mp3,*.flac,*.ogg,*.m4a
-       \ {Play using ffplay}
-       \ ffplay %c,
+       \ {Play using vlc}
+       \ vlc %f &,
        \ {Play using MPlayer}
-       \ mplayer %f,
+       \ mplayer %f &,
 fileviewer *.mp3 mp3info
 
 " Video
 filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv
-        \ {View using ffplay}
-        \ ffplay -fs %c,
-        \ {View using Dragon}
-        \ dragon %f,
-        \ {View using mplayer}
-        \ mplayer %f,
+       \ {Play using vlc}
+       \ vlc %f &,
+       \ {Play using MPlayer}
+       \ mplayer %f &,
 fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob
          \ ffprobe -pretty %c 2>&1
 
