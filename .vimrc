@@ -1,3 +1,4 @@
+"------------------------------------------------
 "neobundle config
 if has('vim_starting')
   set nocompatible               " Be iMproved
@@ -16,6 +17,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles here:
 "NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'scrooloose/syntastic'
@@ -39,8 +41,9 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 "end neobundle
+"------------------------------------------------
 
-
+"various
 syntax enable
 colorscheme slate
 set background=dark
@@ -53,16 +56,44 @@ set dir=~/.vimtmp
 "line numbering on
 set number
 
+"lines to keep above/below cursor
+set scrolloff=3
+
 "hide menu bar and toolbar
 set guioptions-=m
 set guioptions-=T
 
 "supertab: set to user completion
 let g:SuperTabDefaultCompletionType = "context"
+"tab goes down the list
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
 "jedi-vim (disable auto-complete on .)
-let g:jedi#popup_on_dot = 0
+"let g:jedi#popup_on_dot = 0
+"don't highlight first entry
+let g:jedi#popup_select_first = 0
 
+"neocomplete -- some config options from readme
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 "airline
 set laststatus=2
 
