@@ -1,0 +1,21 @@
+#ignore everything...
+*
+
+#...except the selected files
+!.gitignore
+!README.md
+!.vimrc
+!.pentadactylrc
+
+#special handling of files in subdirectories
+!.config/
+.config/*
+!.config/zathura/zathurarc
+
+!.vifm/
+.vifm/*
+!.vifm/vifmrc
+
+!.vim/
+.vim/*
+!.vim/ftplugin/python.vim

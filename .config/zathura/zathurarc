@@ -5,3 +5,6 @@ map k navigate previous
 
 set inputbar-fg "#000000"
 set advance-pages-per-row true
+
+set window-title-basename true
+set statusbar-basename true

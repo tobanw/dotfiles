@@ -15,7 +15,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
-"NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'davidhalter/jedi-vim'
@@ -25,6 +25,7 @@ NeoBundle 'ivanov/vim-ipython'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'ardagnir/vimbed'
+NeoBundle 'JuliaLang/julia-vim'
 "NeoBundle 'altercation/vim-colors-solarized'
 "NeoBundle 'vim-scripts/CSApprox'
 "NeoBundle 'flazz/vim-colorschemes'
@@ -63,17 +64,20 @@ set scrolloff=3
 set guioptions-=m
 set guioptions-=T
 
+"airline
+set laststatus=2
+
 "supertab: set to user completion
 let g:SuperTabDefaultCompletionType = "context"
 "tab goes down the list
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
 "jedi-vim (disable auto-complete on .)
-"let g:jedi#popup_on_dot = 0
+let g:jedi#popup_on_dot = 0
 "don't highlight first entry
 let g:jedi#popup_select_first = 0
 
-"neocomplete -- some config options from readme
+"neocomplete -- some config options from readme ---------------------
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
@@ -94,8 +98,16 @@ if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-"airline
-set laststatus=2
+
+" make neocomplcache use jedi#completions omni function for python scripts
+if !exists('g:neocomplcache_omni_functions')
+    let g:neocomplcache_omni_functions = {}
+    let g:neocomplcache_omni_functions['python'] = 'jedi#completions'
+endif
+" make Vim call omni function when below patterns matchs
+let g:neocomplcache_force_omni_patterns = {}
+let g:neocomplcache_force_omni_patterns.python = '[^. \t]\.\w*'
+"---------------------------------------------------------------------
 
 "LATEX-SUITE---------------------
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
