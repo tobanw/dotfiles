@@ -3,7 +3,7 @@ unmap k
 map j navigate next
 map k navigate previous
 
-set inputbar-fg "#000000"
+set inputbar-fg "#CCCCCC"
 set advance-pages-per-row true
 
 set window-title-basename true

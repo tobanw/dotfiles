@@ -48,6 +48,7 @@ NeoBundleCheck
 syntax enable
 colorscheme slate
 set background=dark
+set guifont=Inconsolata\ Bold\ 12
 
 "enable backup files, and put backup and swap files in ~/.vimtmp
 set backup
