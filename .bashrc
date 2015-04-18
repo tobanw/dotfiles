@@ -18,6 +18,8 @@ complete -cf sudo
 # load Liquid Prompt: use commands prompt_on and prompt_off to toggle
 [[ $- = *i* ]] && source liquidprompt
 
+# enable readline's vi mode
+set -o vi
 
 #===================================
 # ALIASES
