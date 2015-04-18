@@ -1,22 +1,5 @@
 #ignore everything...
 *
 
-#...except the selected files
-!.gitignore
-!README.md
-!.vimrc
-!.pentadactylrc
-!.bashrc
-
-#special handling of files in subdirectories
-!.config/
-.config/*
-!.config/zathura/zathurarc
-
-!.vifm/
-.vifm/*
-!.vifm/vifmrc
-
-!.vim/
-.vim/*
-!.vim/ftplugin/python.vim
+# usage guide:
+# 	* use `git add -f file` to manually start tracking file
