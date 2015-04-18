@@ -14,6 +14,13 @@ export PATH="/home/toban/utilities/anaconda3/bin:$PATH"
 # enable tab-completion when using sudo
 complete -cf sudo
 
+# use git prompt script (to show branch in prompt)
+# source /usr/share/git/completion/git-prompt.sh
+
+# installed liquidprompt via AUR
+# load Liquid Prompt: use commands prompt_on and prompt_off to toggle
+[[ $- = *i* ]] && source liquidprompt
+
 
 #===================================
 # ALIASES
@@ -31,6 +38,34 @@ alias mkdir='mkdir -p' # automatically make parents
 alias ls='ls -h --color=auto'
 alias ll='ls -Alhv --color=auto --group-directories-first'
 
+
+
+#===================================
+# MAN PAGE COLORS
+#
+# Toban pulled this from https://wiki.archlinux.org/index.php/Man_page#Colored_man_pages
+#
+#===================================
+
+man() {
+    env LESS_TERMCAP_mb=$'\E[01;31m' \
+    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+    LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_se=$'\E[0m' \
+    LESS_TERMCAP_so=$'\E[38;5;246m' \
+    LESS_TERMCAP_ue=$'\E[0m' \
+    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    man "$@"
+}
+
+
+
+#===================================
+# MANUAL PROMPT CONFIGURATION
+# overridden by liquidprompt
+#===================================
+
+: <<'END' # block comment; for using liquidprompt
 
 #===================================
 # PROMPT COLORS
@@ -216,22 +251,4 @@ case ${TERM} in
         ;;
 esac
 
-
-
-#===================================
-# MAN PAGE COLORS
-#
-# Toban pulled this from https://wiki.archlinux.org/index.php/Man_page#Colored_man_pages
-#
-#===================================
-
-man() {
-    env LESS_TERMCAP_mb=$'\E[01;31m' \
-    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-    LESS_TERMCAP_me=$'\E[0m' \
-    LESS_TERMCAP_se=$'\E[0m' \
-    LESS_TERMCAP_so=$'\E[38;5;246m' \
-    LESS_TERMCAP_ue=$'\E[0m' \
-    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
-    man "$@"
-}
+END
