@@ -126,4 +126,7 @@ let g:tex_flavor='latex'
 " sets pdf as default for compile/view
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats = 'pdf,aux'
+
+" set viewer as zathura
+let g:Tex_ViewRule_pdf = 'zathura'
 "--------------------------------
