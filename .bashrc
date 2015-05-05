@@ -11,6 +11,9 @@
 # added by Anaconda3 2.1.0 installer
 export PATH="/home/toban/utilities/anaconda3/bin:$PATH"
 
+#enable bash-completion, if available
+[[ -f /usr/share/bash_completion ]] && source /usr/share/bash-completion/bash_completion
+
 # enable tab-completion when using sudo
 complete -cf sudo
 
