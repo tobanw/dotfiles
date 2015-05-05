@@ -24,8 +24,10 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'ivanov/vim-ipython'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'ardagnir/vimbed'
 NeoBundle 'JuliaLang/julia-vim'
+NeoBundle 'vim-latex/vim-latex'
+
+"NeoBundle 'ardagnir/vimbed'
 "NeoBundle 'altercation/vim-colors-solarized'
 "NeoBundle 'vim-scripts/CSApprox'
 "NeoBundle 'flazz/vim-colorschemes'
@@ -111,16 +113,10 @@ let g:neocomplcache_force_omni_patterns.python = '[^. \t]\.\w*'
 "---------------------------------------------------------------------
 
 "LATEX-SUITE---------------------
-" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-filetype plugin on
-
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
 " program to always generate a file-name.
 set grepprg=grep\ -nH\ $*
-
-" OPTIONAL: This enables automatic indentation as you type.
-filetype indent on
 
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
