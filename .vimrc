@@ -15,7 +15,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
-NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-fugitive' "git wrapper
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'davidhalter/jedi-vim'
@@ -26,6 +26,7 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'JuliaLang/julia-vim'
 NeoBundle 'vim-latex/vim-latex'
+NeoBundle 'vim-scripts/Smart-Tabs' "tabs for indent, spaces for alignment
 
 "NeoBundle 'ardagnir/vimbed'
 "NeoBundle 'altercation/vim-colors-solarized'
@@ -59,6 +60,13 @@ set dir=~/.vimtmp
 
 "line numbering on
 set number
+
+"tabs
+set noexpandtab "don't convert tabs to spaces
+set tabstop=4 "tab is 4 characters
+set shiftwidth=4 "indenting motion <</>>
+set softtabstop=4 " backspace over expanded tabs
+set autoindent
 
 "lines to keep above/below cursor
 set scrolloff=3
