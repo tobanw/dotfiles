@@ -1,5 +1,2 @@
-#ignore everything...
-*
-
 # usage guide:
-# 	* use `git add -f file` to manually start tracking file
+# - use `git add -f file` to manually track an ignored file
