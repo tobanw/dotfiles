@@ -3,12 +3,13 @@
 - link:
     ~/.vim: vim/
     ~/.vimrc: vimrc
+    ~/.zshrc: zshrc
     ~/.bashrc: bashrc
     ~/.pentadactylrc: pentadactylrc
     ~/.config/zathura/zathurarc:
       create: true
       path: zathurarc
-    ~/.config/liquidpromptrc:
+    ~/.liquidpromptrc:
       create: true
       path: liquidpromptrc
     ~/.vifm/vifmrc:
