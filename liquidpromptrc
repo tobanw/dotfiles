@@ -4,11 +4,17 @@ LP_COLOR_USER_LOGGED=$CYAN
 # only show user if different from logged in user
 LP_USER_ALWAYS=0
 
+# only show hostname if connected via remote shell
+LP_HOSTNAME_ALWAYS=0
+
 # max percentage of screen width for path
 LP_PATH_LENGTH=25
 
 # number of directories to keep at beginning of shortened path
 LP_PATH_KEEP=1
+
+# temperature threshold
+LP_TEMP_THRESHOLD=70
 
 # use prompt as terminal window title
 LP_ENABLE_SCREEN_TITLE=1
