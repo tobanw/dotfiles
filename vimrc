@@ -26,7 +26,9 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'JuliaLang/julia-vim'
 NeoBundle 'vim-latex/vim-latex'
-NeoBundle 'vim-scripts/Smart-Tabs' "tabs for indent, spaces for alignment
+
+"NeoBundle 'vim-scripts/Smart-Tabs' "tabs for indent, spaces for alignment
+" Smart-Tabs conflicts with supertab
 
 "NeoBundle 'ardagnir/vimbed'
 "NeoBundle 'altercation/vim-colors-solarized'
@@ -130,6 +132,9 @@ set grepprg=grep\ -nH\ $*
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
+
+" set biblatex to use biber: 
+let g:Tex_BibtexFlavor='biber'
 
 " sets pdf as default for compile/view
 let g:Tex_DefaultTargetFormat = 'pdf'

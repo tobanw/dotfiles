@@ -17,16 +17,18 @@ Contents				*jedi-vim-contents*
     2.1. Manually			|jedi-vim-installation-manually|
     2.2. Using Pathogen			|jedi-vim-installation-pathogen|
     2.3. Using Vundle			|jedi-vim-installation-vundle|
+    2.4. Installing from Repositories	|jedi-vim-installation-repos|
 3. Supported Python features		|jedi-vim-support|
 4. Usage				|jedi-vim-usage|
 5. Mappings				|jedi-vim-keybindings|
     5.1. Start completion		|g:jedi#completions_command|
-    5.2. Go to assignment		|g:jedi#goto_assignments_command|
-    5.3. Get original definition	|g:jedi#goto_definitions_command|
-    5.4. Show documentation		|g:jedi#documentation_command|
-    5.5. Rename variables		|g:jedi#rename_command|
-    5.6. Show name usages		|g:jedi#usages_command|
-    5.7. Open module by name 		|:Pyimport|
+    5.2. Go to definition		|g:jedi#goto_command|
+    5.3. Go to assignment		|g:jedi#goto_assignments_command|
+    5.4  Go to definition (deprecated)	|g:jedi#goto_definitions_command|
+    5.5. Show documentation		|g:jedi#documentation_command|
+    5.6. Rename variables		|g:jedi#rename_command|
+    5.7. Show name usages		|g:jedi#usages_command|
+    5.8. Open module by name 		|:Pyimport|
 6. Configuration			|jedi-vim-configuration|
     6.1. auto_initialization		|g:jedi#auto_initialization|
     6.2. auto_vim_configuration		|g:jedi#auto_vim_configuration|
@@ -146,6 +148,13 @@ Pathogen simplifies installation considerably.
 
 Help tags are generated automatically, so you should be good to go.
 
+------------------------------------------------------------------------------
+2.4. Installing from Repositories	*jedi-vim-installation-repos*
+
+Some Linux distributions have jedi-vim packages in their official 
+repositories. On Arch Linux, install vim-jedi. On Debian (8+) or Ubuntu 
+(14.04+) install vim-python-jedi.
+
 ==============================================================================
 3. Supported Python features		*jedi-vim-support*
 
@@ -225,17 +234,15 @@ Note: If you want to use <Tab> for completion, please install Supertab:
 https://github.com/ervandew/supertab.
 
 ------------------------------------------------------------------------------
-5.2. `g:jedi#goto_assignments_command`	*g:jedi#goto_assignments_command*
-Function: `jedi#goto_assignments()`
-Default: <leader>g			Go to definition
+5.2. `g:jedi#goto_command`		*g:jedi#goto_command*
+Function: `jedi#goto()`
+Default: <leader>d			Go to definition (or assignment)
 
-This function finds the first definition of the function/class under the
-cursor. It produces an error if the definition is not in a Python file.
-
-------------------------------------------------------------------------------
-5.3. `g:jedi#goto_definitions_command`	*g:jedi#goto_definitions_command*
-Function: `jedi#goto_definitions()`
-Default: <leader>d			Go to original definition
+This function first tries |jedi#goto_definitions|, and falls back to
+|jedi#goto_assignments| for builtin modules.  It produces an error if nothing
+could be found.
+NOTE: this implementation is subject to change.
+Ref: https://github.com/davidhalter/jedi/issues/570
 
 This command tries to find the original definition of the function/class under
 the cursor. Just like the `jedi#goto_assignments()` function, it does not work
@@ -267,15 +274,32 @@ you all the way to the >
 line in file3.py.
 
 ------------------------------------------------------------------------------
-5.4. `g:jedi#documentation_command`	*g:jedi#documentation_command*
+5.3. `g:jedi#goto_assignments_command`	*g:jedi#goto_assignments_command*
+Function: `jedi#goto_assignments()`
+Default: <leader>g			Go to assignment
+
+This function finds the first definition of the function/class under the
+cursor. It produces an error if the definition is not in a Python file.
+
+------------------------------------------------------------------------------
+5.4. `g:jedi#goto_definitions_command`	*g:jedi#goto_definitions_command*
+Function: `jedi#goto_definitions()`
+Default: - 				Go to original definition
+
+NOTE: Deprecated. Use |g:jedi#goto_command| / |jedi#goto()| instead, which
+currently uses this internally.
+
+------------------------------------------------------------------------------
+5.5. `g:jedi#documentation_command`	*g:jedi#documentation_command*
 Function: `jedi#show_documentation()`
 Default: <K>				Show pydoc documentation
 
 This shows the pydoc documentation for the item currently under the cursor.
-The documentation is opened in a horizontally split buffer.
+The documentation is opened in a horizontally split buffer. The height of this
+buffer is controlled by `g:jedi#max_doc_height` (set by default to 30).
 
 ------------------------------------------------------------------------------
-5.5. `g:jedi#rename_command`		*g:jedi#rename_command*
+5.6. `g:jedi#rename_command`		*g:jedi#rename_command*
 Function: `jedi#rename()`
 Default: <leader>r			Rename variables
 
@@ -286,7 +310,7 @@ with the new one. The number of performed renames is displayed in the command
 line.
 
 ------------------------------------------------------------------------------
-5.6. `g:jedi#usages_command`		*g:jedi#usages_command*
+5.7. `g:jedi#usages_command`		*g:jedi#usages_command*
 Function: `jedi#usages()`
 Default: <leader>n			Show usages of a name.
 
@@ -294,7 +318,7 @@ The quickfix window is populated with a list of all names which point to the
 definition of the name under the cursor.
 
 ------------------------------------------------------------------------------
-5.7. Open module by name		*:Pyimport*
+5.8. Open module by name		*:Pyimport*
 Function: `jedi#py_import(args)`
 Default: :Pyimport			e.g. `:Pyimport os` shows os.py in VIM.
 
@@ -328,9 +352,11 @@ Default: 1 (Perform automatic initialization)
 ------------------------------------------------------------------------------
 6.2. `g:jedi#auto_vim_configuration`	*g:jedi#auto_vim_configuration*
 
-Jedi-vim sets 'completeopt' to `menuone,longest,preview` by default. It also
-remaps <Ctrl-C> to <Esc> in insert mode. If you want to keep your own
-configuration, disable this setting.
+Jedi-vim sets 'completeopt' to `menuone,longest,preview` by default, if
+'completeopt' is not changed from Vim's default.
+It also remaps <Ctrl-C> to <Esc> in insert mode.
+
+If you want to keep your own configuration, disable this setting.
 
 Options: 0 or 1
 Default: 1 (Set 'completeopt' and mapping as described above)
@@ -454,7 +480,7 @@ or set directly using this function, which has the same name as the variable:
 Function: `jedi#force_py_version(py_version)`
 
 Options: 2 or 3
-Default: 2
+Default: "auto" (will use sys.version_info from "python" in your $PATH)
 
 ==============================================================================
 7. Testing				*jedi-vim-testing*

@@ -30,3 +30,7 @@ antigen bundle nojhan/liquidprompt
  
 # tell antigen that you're done
 antigen apply
+
+
+# added by Anaconda3 2.1.0 installer
+export PATH="/home/toban/utilities/anaconda3/bin:$PATH"
