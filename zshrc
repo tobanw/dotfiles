@@ -13,6 +13,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+
 # load antigen
 source ~/utilities/rc-files/antigen/antigen.zsh
 
@@ -31,6 +32,10 @@ antigen bundle nojhan/liquidprompt
 # tell antigen that you're done
 antigen apply
 
+
+# set default editor
+export EDITOR=vim
+export VISUAL=vim
 
 # added by Anaconda3 2.1.0 installer
 export PATH="/home/toban/utilities/anaconda3/bin:$PATH"
