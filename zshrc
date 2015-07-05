@@ -4,7 +4,6 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd
 unsetopt beep
-bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/toban/.zshrc'
@@ -33,7 +32,7 @@ antigen bundle nojhan/liquidprompt
 antigen apply
 
 
-# set default editor
+# set default editor (don't need bindkey -v as zsh infers from this)
 export EDITOR=vim
 export VISUAL=vim
 

@@ -1,1 +1,4 @@
 # - use `git add -f file` to manually track an ignored file
+
+# don't track neobundle stuff
+vim/bundle/
