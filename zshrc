@@ -22,8 +22,14 @@ antigen use oh-my-zsh
 # bundles from default repo (oh-my-zsh)
 # antigen bundle git
 
+# enhanced vi mode
+antigen bundle vi-mode
+
 # syntax highlighting
 antigen bundle zsh-users/zsh-syntax-highlighting
+
+# 256 color terminal
+antigen bundle chrissicool/zsh-256color
 
 # liquidprompt
 antigen bundle nojhan/liquidprompt

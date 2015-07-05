@@ -1,7 +1,7 @@
 - clean: ['~', '~/.config']
 
 - link:
-    ~/.vim: vim/
+    ~/.vim/ftplugin: vim/ftplugin
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.bashrc: bashrc
