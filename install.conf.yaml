@@ -15,3 +15,6 @@
     ~/.vifm/vifmrc:
       create: true
       path: vifmrc
+    ~/.config/ranger/rc.conf:
+      create: true
+      path: ranger.conf

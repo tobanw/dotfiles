@@ -42,5 +42,44 @@ antigen apply
 export EDITOR=vim
 export VISUAL=vim
 
+# prevent redundant load in ranger
+RANGER_LOAD_DEFAULT_RC=FALSE
+
 # added by Anaconda3 2.1.0 installer
 export PATH="/home/toban/utilities/anaconda3/bin:$PATH"
+
+#===================================
+# ALIASES
+#
+# Toban pulled many of these from http://tldp.org/LDP/abs/html/sample-bashrc.html 
+#
+#===================================
+
+# -i for interactive. Prompts before overwriting/removing.
+alias rm='echo dude... use trash-put'
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias mkdir='mkdir -p' # automatically make parents
+alias ls='ls -h --color=auto'
+alias ll='ls -Alhv --color=auto --group-directories-first'
+
+
+
+#===================================
+# MAN PAGE COLORS
+#
+# Toban pulled this from https://wiki.archlinux.org/index.php/Man_page#Colored_man_pages
+#
+#===================================
+
+man() {
+    env LESS_TERMCAP_mb=$'\E[01;31m' \
+    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+    LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_se=$'\E[0m' \
+    LESS_TERMCAP_so=$'\E[38;5;246m' \
+    LESS_TERMCAP_ue=$'\E[0m' \
+    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    man "$@"
+}
