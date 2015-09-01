@@ -48,6 +48,11 @@ RANGER_LOAD_DEFAULT_RC=FALSE
 # added by Anaconda3 2.1.0 installer
 export PATH="/home/toban/utilities/anaconda3/bin:$PATH"
 
+# ruby gems (local installs)
+if which ruby >/dev/null && which gem >/dev/null; then
+	PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
 #===================================
 # ALIASES
 #

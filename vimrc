@@ -73,10 +73,6 @@ set autoindent
 "lines to keep above/below cursor
 set scrolloff=3
 
-"remaps
-nnoremap J <C-D>
-nnoremap K <C-U>
-
 "hide menu bar and toolbar
 set guioptions-=m
 set guioptions-=T
