@@ -33,4 +33,34 @@ set iskeyword+=:
 
 " \k to save and compile
 nmap <leader>k :w<CR> <leader>ll
+
+" compile main file in modular documents
+" Look for main file by looking in the first 20 lines, same as TeXShop, for:
+" % !TEX root = [filename].tex
+" Author: Seth R. Johnson
+let g:Tex_MainFileExpression = 'SRJMainFile(modifier)'
+
+function! SRJMainFile(fmod)
+	let s:Tex_Match = '\v^\s*\%\s*!TEX\s+root\s*\=\s*\zs(.*\.tex)\ze\s*$'
+    let s:lnum = 1
+    while s:lnum < 20
+		let s:basefile = matchstr( getline(s:lnum), s:Tex_Match)
+		if !empty(s:basefile)
+			break
+		endif
+		let s:lnum += 1
+    endwhile
+
+	if !empty(s:basefile)
+		let s:origdir = fnameescape(getcwd())
+		let s:newdir = fnameescape(expand('%:p:h'))
+		exec 'cd'.s:newdir
+		let s:basefile = fnamemodify(s:basefile, a:fmod) 
+		exec 'cd'.s:origdir
+	else
+		let s:basefile = expand('%'.a:fmod)
+	endif
+
+	return s:basefile
+endfunction
 "--------------------------------
