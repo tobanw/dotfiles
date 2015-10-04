@@ -12,7 +12,7 @@ map -count -description='previous tab' -modes=n,v K -builtin <count><C-p>
 set cdpath=''
 set followhints=1
 set guioptions=bCrns
-set passkeys=www.google.com/search:<up><down><left><right>,mail.google.com:asdqeryuiophjklzxcvnm\,./?!#[]{}_<up><down><left><right><esc><S-t>,gs,gi,gt,gd,ga,gc,gk,gl,*a,*n,*r,*u,*s,*t,hm,ha,hi,hc,gp,hp,plus.google.com:<up><down><left><right>jkorlv,github.com:?,gn,gc,gp,gw,inbox.google.com:jkieyzrctunpqam<S-p><S-x><C-k>/?!#.[]<up><down><left><right><esc>
+set passkeys=www.google.com/search:<up><down><left><right>,mail.google.com:asdqeryuiophjklzxcvnm\,./?!#[]{}_<up><down><left><right><esc><S-t>,gs,gi,gt,gd,ga,gc,gk,gl,*a,*n,*r,*u,*s,*t,hm,ha,hi,hc,gp,hp,plus.google.com:<up><down><left><right>jkorlv,github.com:?,gn,gc,gp,gw,inbox.google.com:jkoieyxzrctunpqam<S-p><S-x><C-k>/?!#.[]<up><down><left><right><esc>
 set scrolltime=50
 
 " vim: set ft=pentadactyl:
