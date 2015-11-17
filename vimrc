@@ -18,14 +18,16 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tpope/vim-fugitive' "git wrapper
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'davidhalter/jedi-vim'
-NeoBundle 'ervandew/supertab'
-NeoBundle 'scrooloose/syntastic'
+NeoBundle 'davidhalter/jedi-vim' "python autocompletion
+NeoBundle 'ervandew/supertab' "tab completion
+NeoBundle 'scrooloose/syntastic' "syntax checker
 NeoBundle 'ivanov/vim-ipython'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'JuliaLang/julia-vim'
 NeoBundle 'vim-latex/vim-latex'
+"NeoBundle 'greyblake/vim-preview'
+NeoBundle 'tobanw/vim-preview' "markdown to html
 
 "NeoBundle 'vim-scripts/Smart-Tabs' "tabs for indent, spaces for alignment
 " Smart-Tabs conflicts with supertab
