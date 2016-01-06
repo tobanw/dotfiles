@@ -2,3 +2,6 @@
 
 # don't track neobundle stuff
 vim/bundle/
+
+# ignore the neovim symlinked config file
+vim/init.vim

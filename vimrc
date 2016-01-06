@@ -25,7 +25,8 @@ NeoBundle 'ivanov/vim-ipython'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'JuliaLang/julia-vim'
-NeoBundle 'vim-latex/vim-latex'
+NeoBundle 'vim-latex/vim-latex' " vim latex suite
+NeoBundle 'tmhedberg/SimpylFold' "python code folding
 "NeoBundle 'greyblake/vim-preview'
 NeoBundle 'tobanw/vim-preview' "markdown to html
 
