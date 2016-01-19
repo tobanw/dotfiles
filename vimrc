@@ -93,6 +93,11 @@ let g:jedi#popup_on_dot = 0
 "don't highlight first entry
 let g:jedi#popup_select_first = 0
 
+"vim-latex: the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
 "neocomplete -- some config options from readme ---------------------
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
