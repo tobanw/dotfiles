@@ -14,7 +14,7 @@ compinit
 
 
 # load antigen
-source ~/utilities/rc-files/antigen/antigen.zsh
+source ~/utilities/dotfiles/antigen/antigen.zsh
 
 # load the oh-my-zsh library
 antigen use oh-my-zsh

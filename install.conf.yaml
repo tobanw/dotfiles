@@ -18,3 +18,6 @@
     ~/.config/ranger/rc.conf:
       create: true
       path: ranger.conf
+
+- shell:
+  - [git submodule update --init --recursive, Updating submodules]
