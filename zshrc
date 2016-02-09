@@ -25,6 +25,9 @@ antigen use oh-my-zsh
 # enhanced vi mode
 antigen bundle vi-mode
 
+# taskwarrior completions
+antigen bundle taskwarrior
+
 # syntax highlighting
 antigen bundle zsh-users/zsh-syntax-highlighting
 
