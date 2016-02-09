@@ -4,20 +4,22 @@
     ~/.vim/ftplugin: vim/ftplugin/
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
+    ~/.taskrc: taskrc
+    ~/.liquidpromptrc: liquidpromptrc
     ~/.bashrc: bashrc
     ~/.pentadactylrc: pentadactylrc
     ~/.config/zathura/zathurarc:
       create: true
       path: zathurarc
-    ~/.liquidpromptrc:
-      create: true
-      path: liquidpromptrc
     ~/.vifm/vifmrc:
       create: true
       path: vifmrc
     ~/.config/ranger/rc.conf:
       create: true
       path: ranger.conf
+    ~/.config/ranger/rifle.conf:
+      create: true
+      path: rifle.conf
 
 - shell:
   - [git submodule update --init --recursive, Updating submodules]
