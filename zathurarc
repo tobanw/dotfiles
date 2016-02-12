@@ -8,3 +8,5 @@ set advance-pages-per-row true
 
 set window-title-basename true
 set statusbar-basename true
+
+set selection-clipboard clipboard
