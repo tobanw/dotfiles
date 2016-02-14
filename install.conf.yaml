@@ -4,6 +4,7 @@
     ~/.vim/ftplugin: vim/ftplugin/
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
+    ~/.tmux.conf: tmux.conf
     ~/.taskrc: taskrc
     ~/.liquidpromptrc: liquidpromptrc
     ~/.bashrc: bashrc
