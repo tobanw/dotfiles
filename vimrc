@@ -23,7 +23,7 @@ NeoBundle 'ervandew/supertab' "tab completion
 NeoBundle 'scrooloose/syntastic' "syntax checker
 NeoBundle 'ivanov/vim-ipython'
 NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'JuliaLang/julia-vim'
 NeoBundle 'vim-latex/vim-latex' " vim latex suite
 NeoBundle 'tmhedberg/SimpylFold' "python code folding
