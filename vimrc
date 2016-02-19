@@ -82,6 +82,8 @@ set guioptions-=T
 
 "airline
 set laststatus=2
+"enable top tab bar
+let g:airline#extensions#tabline#enabled = 1
 
 "supertab: set to user completion
 let g:SuperTabDefaultCompletionType = "context"
