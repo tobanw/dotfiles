@@ -1,0 +1,17 @@
+[user]
+	email = tobanw@gmail.com
+	name = Toban Wiebe
+[core]
+	editor = vim
+[color]
+	ui = auto
+[push]
+	default = simple
+[merge]
+	ff = false
+[filter "lfs"]
+	smudge = git-lfs smudge %f
+	required = true
+	clean = git-lfs clean %f
+[branch]
+	autosetuprebase = always

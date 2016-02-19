@@ -3,6 +3,7 @@
 - link:
     ~/.vim/ftplugin: vim/ftplugin/
     ~/.vimrc: vimrc
+    ~/.gitconfig: gitconfig
     ~/.zshrc: zshrc
     ~/.tmux.conf: tmux.conf
     ~/.taskrc: taskrc
