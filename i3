@@ -138,10 +138,10 @@ mode "resize" {
         bindsym l resize grow width 10 px or 5 ppt
 
         # greater precision for arrow keys
-        bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
-        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym Left resize shrink width 5 px or 2 ppt
+        bindsym Down resize grow height 5 px or 2 ppt
+        bindsym Up resize shrink height 5 px or 2 ppt
+        bindsym Right resize grow width 5 px or 2 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -149,6 +149,20 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# Pulse Audio controls
+# sound up/down
+# # TODO auto detect the sink (0 hdmi, 1 internal)
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
+bindsym Mod1+Control+Up exec --no-startup-id pactl set-sink-volume 1 +5%
+bindsym Mod1+Control+Down exec --no-startup-id pactl set-sink-volume 1 -5%
+bindsym Mod1+Control+m exec --no-startup-id pactl set-sink-mute 1 toggle
+
+# cmus controls
+bindsym Mod1+Control+slash exec --no-startup-id cmus-remote --pause
+bindsym Mod1+Control+comma exec --no-startup-id cmus-remote --prev
+bindsym Mod1+Control+period exec --no-startup-id cmus-remote --next
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
