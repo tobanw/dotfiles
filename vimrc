@@ -56,7 +56,7 @@ NeoBundleCheck
 syntax enable
 colorscheme slate
 set background=dark
-set guifont=Inconsolata\ Bold\ 12
+set guifont=Inconsolata\ Bold\ 14
 
 "enable backup files, and put backup and swap files in ~/.vimtmp
 set backup
@@ -76,9 +76,8 @@ set autoindent
 "lines to keep above/below cursor
 set scrolloff=3
 
-"hide menu bar and toolbar
-set guioptions-=m
-set guioptions-=T
+"hide menu bar, toolbar, scrollbar
+set guioptions=ai
 
 "airline
 set laststatus=2
