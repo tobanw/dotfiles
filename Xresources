@@ -1,0 +1,12 @@
+! scrollback
+xterm*savelines: 8192
+
+! dark background
+xterm*reverseVideo: on
+
+! fonts
+xterm*faceName: Inconsolata
+xterm*faceSize: 14
+
+! Xft.dpi: 120
+Xft.lcdfilter: lcddefault
