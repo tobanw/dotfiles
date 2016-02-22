@@ -36,7 +36,7 @@ bindsym $mod+t exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -fn 'Inconsolata Bold 12'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -155,14 +155,17 @@ bindsym $mod+r mode "resize"
 # # TODO auto detect the sink (0 hdmi, 1 internal)
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
-bindsym Mod1+Control+Up exec --no-startup-id pactl set-sink-volume 1 +5%
-bindsym Mod1+Control+Down exec --no-startup-id pactl set-sink-volume 1 -5%
+bindsym Mod1+Control+equal exec --no-startup-id pactl set-sink-volume 1 +5%
+bindsym Mod1+Control+minus exec --no-startup-id pactl set-sink-volume 1 -5%
 bindsym Mod1+Control+m exec --no-startup-id pactl set-sink-mute 1 toggle
 
 # cmus controls
 bindsym Mod1+Control+slash exec --no-startup-id cmus-remote --pause
 bindsym Mod1+Control+comma exec --no-startup-id cmus-remote --prev
 bindsym Mod1+Control+period exec --no-startup-id cmus-remote --next
+
+# lock screen
+bindsym Mod1+Control+z exec i3lock --color=000000
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

@@ -62,7 +62,7 @@ cpu_usage {
 
 cpu_temperature 0 {
 		format = "±%degrees°C"
-		path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
+		path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input"
 		max_threshold = 75
 }
 
