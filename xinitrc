@@ -62,7 +62,7 @@ else
 fi
 
 # random wallpaper from ~/.wallpaper
-feh --bg-max --randomize ~/.wallpaper/* &
+feh --bg-fill --no-fehbg --randomize ~/.wallpaper/* &
 
 # existence function
 exists() {
