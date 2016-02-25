@@ -1,2 +1,2 @@
 set expandtab "preferred for python
-set textwidth=80
+set textwidth=99

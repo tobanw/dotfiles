@@ -1,11 +1,15 @@
 "------------------------------------------------
 "neobundle config
-if has('vim_starting')
-  set nocompatible               " Be iMproved
 
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+" Skip initialization for vim-tiny or vim-small.
+if 0 | endif
+
+if &compatible
+  set nocompatible               " Be iMproved
 endif
+
+" Required:
+set runtimepath^=~/.vim/bundle/neobundle.vim/
 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
@@ -37,9 +41,6 @@ NeoBundle 'tobanw/vim-preview' "markdown to html
 "NeoBundle 'altercation/vim-colors-solarized'
 "NeoBundle 'vim-scripts/CSApprox'
 "NeoBundle 'flazz/vim-colorschemes'
-
-" You can specify revision/branch/tag.
-"NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 call neobundle#end()
 
