@@ -13,6 +13,9 @@ host=`hostname | cut -d. -f1` # period for delimiter, first field
 
 # use Anaconda3 python
 if [ $host = "tesla" ]; then
+	if [ -f /etc/bashrc ]; then
+		. /etc/bashrc
+	fi
 	export PATH=/usr/global/anaconda/bin:$PATH
 	# use python3 by default
 	source activate py3k
