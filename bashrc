@@ -8,8 +8,18 @@
 # Default prompt
 #PS1='[\u@\h \W]\$ '
 
-# added by Anaconda3 2.1.0 installer
-export PATH="/home/toban/utilities/anaconda3/bin:$PATH"
+# get hostname for account-specific commands
+host=`hostname | cut -d. -f1` # period for delimiter, first field
+
+# use Anaconda3 python
+if [ $host = "tesla" ]; then
+	export PATH=/usr/global/anaconda/bin:$PATH
+	# use python3 by default
+	source activate py3k
+else
+	export PATH=/home/toban/utilities/anaconda3/bin:$PATH
+fi
+
 
 #enable bash-completion, if available
 [[ -f /usr/share/bash_completion ]] && source /usr/share/bash-completion/bash_completion
@@ -17,9 +27,9 @@ export PATH="/home/toban/utilities/anaconda3/bin:$PATH"
 # enable tab-completion when using sudo
 complete -cf sudo
 
-# installed liquidprompt via AUR
+# can install liquidprompt via AUR
 # load Liquid Prompt: use commands prompt_on and prompt_off to toggle
-[[ $- = *i* ]] && source liquidprompt
+# [[ $- = *i* ]] && source liquidprompt
 
 # enable readline's vi mode
 set -o vi
