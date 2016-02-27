@@ -32,7 +32,7 @@ NeoBundle 'JuliaLang/julia-vim'
 NeoBundle 'vim-latex/vim-latex' " vim latex suite
 NeoBundle 'tmhedberg/SimpylFold' "python code folding
 "NeoBundle 'greyblake/vim-preview'
-NeoBundle 'tobanw/vim-preview' "markdown to html
+NeoBundle 'tobanw/vim-preview' "markdown to html (my fork with mathjax enabled)
 
 "NeoBundle 'vim-scripts/Smart-Tabs' "tabs for indent, spaces for alignment
 " Smart-Tabs conflicts with supertab
@@ -73,6 +73,9 @@ set tabstop=4 "tab is 4 characters
 set shiftwidth=4 "indenting motion <</>>
 set softtabstop=4 " backspace over expanded tabs
 set autoindent
+
+"defaults, overridden by ftplugin
+set textwidth=0
 
 "lines to keep above/below cursor
 set scrolloff=3

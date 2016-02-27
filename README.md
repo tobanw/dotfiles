@@ -11,12 +11,15 @@ Finally, execute the install script: `./install`.
 - `vim` and `neobundle`
 - `zsh` and `antigen`
 - `liquidprompt`
+- `tmux`
 - `ranger`
 - `taskwarrior`
 - `zathura`
 - `bash`
 - `vifm`
 - `pentadactyl`
+- `i3`
+- `xinit`
 
 
 [dotbot]: https://github.com/anishathalye/dotbot
