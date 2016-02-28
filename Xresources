@@ -1,4 +1,4 @@
-! scrollback
+! scrollback buffer
 xterm*savelines: 8192
 
 ! dark background
@@ -8,5 +8,12 @@ xterm*reverseVideo: on
 xterm*faceName: Inconsolata
 xterm*faceSize: 14
 
-! Xft.dpi: 120
 Xft.lcdfilter: lcddefault
+
+! urxvt config
+URxvt.font: xft:Inconsolata:size=14
+! dark background
+URxvt.reverseVideo: on
+! scrollback buffer
+URxvt.saveLines: 8192
+URxvt.scrollBar: off

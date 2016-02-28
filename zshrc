@@ -40,6 +40,8 @@ antigen bundle nojhan/liquidprompt
 # tell antigen that you're done
 antigen apply
 
+# set default terminal to urxvt
+export TERMINAL=urxvt
 
 # set default editor (don't need bindkey -v as zsh infers from this)
 export EDITOR=vim
