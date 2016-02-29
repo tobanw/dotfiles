@@ -33,6 +33,7 @@ NeoBundle 'vim-latex/vim-latex' " vim latex suite
 NeoBundle 'tmhedberg/SimpylFold' "python code folding
 "NeoBundle 'greyblake/vim-preview'
 NeoBundle 'tobanw/vim-preview' "markdown to html (my fork with mathjax enabled)
+NeoBundle 'morhetz/gruvbox' "256 color scheme
 
 "NeoBundle 'vim-scripts/Smart-Tabs' "tabs for indent, spaces for alignment
 " Smart-Tabs conflicts with supertab
@@ -55,9 +56,13 @@ NeoBundleCheck
 
 "various
 syntax enable
-colorscheme slate
 set background=dark
 set guifont=Inconsolata\ Bold\ 14
+
+"gruvbox colorscheme
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
 
 "enable backup files, and put backup and swap files in ~/.vimtmp
 set backup
@@ -86,7 +91,7 @@ set guioptions=ai
 "airline
 set laststatus=2
 "enable top tab bar
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 
 "supertab: set to user completion
 let g:SuperTabDefaultCompletionType = "context"
