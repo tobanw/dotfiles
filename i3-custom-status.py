@@ -10,7 +10,8 @@
 # in the 'general' section.
 # Then, in your ~/.i3/config, use:
 #     status_command i3status | ~/i3status/contrib/wrapper.py
-# In the 'bar' section.
+# in the 'bar' section.
+# Finally, make sure this file is executable.
 #
 # In its current version it will display the cpu frequency governor, but you
 # are free to change it to display whatever you like, see the comment in the
@@ -39,7 +40,7 @@ def get_cmus_status():
     status = full_status.stdout.split('\n')
     play_status = status[0].split(' ')[1]
     if play_status == 'stopped':
-        out = '◾' # find icon
+        out = '' # font-awesome icon
     elif play_status == 'playing' or play_status == 'paused':
         for entry in status:
             try:
@@ -51,12 +52,12 @@ def get_cmus_status():
             except IndexError:
                 continue
             if play_status == 'playing':
-                icon = '▶'
+                icon = '' # font-awesome icon
             elif play_status == 'paused':
-                icon = '▮▮'
+                icon = '' # font-awesome icon
             else:
                 icon = play_status
-        out = '{} {} - {}'.format(icon, artist, track) # find icon
+        out = '{} {} - {}'.format(icon, artist, track)
     else:
         out = 'ERROR'
     return out
@@ -99,7 +100,7 @@ if __name__ == '__main__':
 
         j = json.loads(line)
         # insert information into the start of the json, but could be anywhere
-        # CHANGE THIS LINE TO INSERT SOMETHING ELSE
+        # cmus now playing status
         j.insert(0, {'full_text' : get_cmus_status(), 'name' : 'cmus'})
         # and echo back new encoded json
         print_line(prefix+json.dumps(j))
