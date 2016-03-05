@@ -54,12 +54,12 @@ fi
 xset r rate 280 40
 xset -b # no bell
 
-# Display setup
-if [[ "$(xrandr | grep 'HDMI1 connected')" != "" ]]; then
-	sleep 1 && xrandr --output eDP1 --auto --output HDMI1 --auto --left-of eDP1
-else
-	sleep 1 && xrandr --output eDP1 --auto --output HDMI1 --off
-fi
+# Display setup -- using autorandr instead!
+#if [[ "$(xrandr | grep 'HDMI1 connected')" != "" ]]; then
+#	sleep 1 && xrandr --output eDP1 --auto --output HDMI1 --auto --left-of eDP1
+#else
+#	sleep 1 && xrandr --output eDP1 --auto --output HDMI1 --off
+#fi
 
 # random wallpaper from ~/.wallpaper
 feh --bg-fill --no-fehbg --randomize ~/.wallpaper/* &
