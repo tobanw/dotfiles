@@ -11,15 +11,17 @@
 # get hostname for account-specific commands
 host=`hostname | cut -d. -f1` # period for delimiter, first field
 
-# use Anaconda3 python
-if [ $host = "tesla" ]; then
+if [ $host = "tesla" ]; then # telsa server
 	if [ -f /etc/bashrc ]; then
 		. /etc/bashrc
 	fi
+	# fix for urxvt
+	export TERM=rxvt-256color
+	# use Anaconda3 python
 	export PATH=/usr/global/anaconda/bin:$PATH
 	# use python3 by default
 	source activate py3k
-else
+else # local
 	export PATH=/home/toban/utilities/anaconda3/bin:$PATH
 fi
 
