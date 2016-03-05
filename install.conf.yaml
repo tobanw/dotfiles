@@ -18,7 +18,7 @@
       path: Xmodmap
     ~/.config/i3/config:
       create: true
-      path: i3
+      path: i3config
     ~/.config/i3status/config:
       create: true
       path: i3status
