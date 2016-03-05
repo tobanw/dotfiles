@@ -72,5 +72,8 @@ exists() {
 # autostart
 exists redshift && redshift &
 
+# xautolock: lock after duration of inactivity
+exists xautolock && xautolock -time 15 -locker 'i3lock --color=000000' &
+
 # NB: lines following `exec` are ignored
 exec i3
