@@ -1,4 +1,4 @@
-- clean: ['~', '~/.config']
+- clean: ['~', '~/.config', '~/.config/i3status', '~/.config/i3', '~/.config/ranger', '.vim']
 
 - link:
     ~/.vimrc: vimrc
@@ -22,9 +22,9 @@
     ~/.config/i3status/config:
       create: true
       path: i3status
-    ~/.config/i3status/mystatus.py:
+    ~/.config/i3status/py3status:
       create: true
-      path: i3-custom-status.py
+      path: py3status/
     ~/.vim/ftplugin:
       create: true
       path: vim/ftplugin/

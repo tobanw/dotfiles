@@ -14,6 +14,11 @@ general {
 		output_format = "i3bar"	
 }
 
+
+order += "cmus"
+#order += "bitcoin_price"
+#order += "sysdata"
+#order += "nvidia_temp"
 #order += "ipv6"
 order += "volume master"
 #order += "run_watch DHCP"
@@ -49,6 +54,12 @@ battery 1 {
 		threshold_type = time
 		low_threshold = 20
 		path = "/sys/class/power_supply/BAT1/uevent"
+}
+
+cmus {
+		indicator_play = ""
+		indicator_pause = ""
+		indicator_stop = ""
 }
 
 volume master {

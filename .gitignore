@@ -5,3 +5,5 @@ vim/bundle/
 
 # ignore the neovim symlinked config file
 vim/init.vim
+
+py3status/__pycache__/
