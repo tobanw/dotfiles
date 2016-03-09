@@ -46,13 +46,12 @@ fi
 # load keymap
 # [[ -f ~/.config/Xmodmap ]] && xmodmap ~/.config/Xmodmap
 
-# Key repeat
-# Set:
-#   $ xset r rate [delay (ms)] [rate (hz)]
-# Get current value:
-#   $ xset q
+# Get current values: $ xset q
+# Key repeat: $ xset r rate [delay (ms)] [rate (hz)]
 xset r rate 280 40
 xset -b # no bell
+# display power saving (disable as workaround for autorandr)
+xset s off -dpms
 
 # Initial display setup -- using autorandr for live swapping!
 if [[ "$(xrandr | grep 'HDMI1 connected')" != "" ]]; then
