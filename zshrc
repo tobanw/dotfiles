@@ -74,6 +74,8 @@ alias mkdir='mkdir -p' # automatically make parents
 alias ls='ls -h --color=auto'
 alias ll='ls -Alhv --color=auto --group-directories-first'
 
+# ssh into tesla server with compatible terminal emulator
+alias tesla='TERM=xterm ssh tesla'
 
 
 #===================================
