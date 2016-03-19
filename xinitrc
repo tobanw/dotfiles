@@ -40,12 +40,6 @@ fi
 
 # User customizations
 
-# this block done above
-# load xterm config
-# [[ -f ~/.config/Xresources ]] && xrdb -load ~/.config/Xresources
-# load keymap
-# [[ -f ~/.config/Xmodmap ]] && xmodmap ~/.config/Xmodmap
-
 # Get current values: $ xset q
 # Key repeat: $ xset r rate [delay (ms)] [rate (hz)]
 xset r rate 280 40
@@ -55,7 +49,7 @@ xset s off -dpms
 
 # Initial display setup -- using autorandr for live swapping!
 if [[ "$(xrandr | grep 'HDMI1 connected')" != "" ]]; then
-	sleep 1 && xrandr --output eDP1 --auto --output HDMI1 --auto --left-of eDP1
+	sleep 1 && xrandr --output eDP1 --auto --output HDMI1 --auto --right-of eDP1
 else
 	sleep 1 && xrandr --output eDP1 --auto --output HDMI1 --off
 fi
@@ -71,8 +65,13 @@ exists() {
 # autostart
 exists redshift && redshift &
 
-# xautolock: lock after duration of inactivity
-exists xautolock && xautolock -time 15 -locker 'i3lock --color=000000' &
+# xautolock:
+#	lock after duration of inactivity
+#	suspend after an additional duration
+#	don't lock if mouse in top right corner
+exists xautolock && xautolock -time 15 -locker 'i3lock --color=000000' \
+	-killtime 45 -killer 'systemctl suspend' \
+	-corners 0-00 &
 
 # NB: lines following `exec` are ignored
 exec i3
