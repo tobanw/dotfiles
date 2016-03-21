@@ -2,8 +2,6 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt autocd
-unsetopt beep
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/toban/.zshrc'
@@ -12,6 +10,11 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# options
+setopt autocd
+unsetopt beep
+setopt correct
+setopt noclobber
 
 # load antigen
 source ~/utilities/dotfiles/antigen/antigen.zsh
@@ -24,21 +27,18 @@ antigen use oh-my-zsh
 
 # enhanced vi mode
 antigen bundle vi-mode
-
 # taskwarrior completions
 antigen bundle taskwarrior
-
 # syntax highlighting
 antigen bundle zsh-users/zsh-syntax-highlighting
-
 # 256 color terminal
 antigen bundle chrissicool/zsh-256color
-
 # liquidprompt
 antigen bundle nojhan/liquidprompt
- 
+
 # tell antigen that you're done
 antigen apply
+
 
 # set default terminal to urxvt
 export TERMINAL=urxvt
