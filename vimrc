@@ -64,10 +64,10 @@ let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
-"enable backup files, and put backup and swap files in ~/.vimtmp
+"enable backup files, and put backup and swap files in ~/.vim/backup
 set backup
-set backupdir=~/.vimtmp
-set dir=~/.vimtmp
+set backupdir=~/.vim/backup
+set dir=~/.vim/backup
 
 "line numbering on
 set number
