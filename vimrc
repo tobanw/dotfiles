@@ -24,6 +24,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'JuliaLang/julia-vim'
 Plug 'vim-latex/vim-latex' " vim latex suite
 Plug 'tmhedberg/SimpylFold' "python code folding
+Plug 'Konfekt/FastFold' " folding performance
 "Plug 'greyblake/vim-preview'
 Plug 'tobanw/vim-preview' "markdown to html (my fork with mathjax enabled)
 Plug 'morhetz/gruvbox' "256 color scheme
