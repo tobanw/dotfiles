@@ -1,6 +1,3 @@
-"------------------------------------------------
-"neobundle config
-
 " Skip initialization for vim-tiny or vim-small.
 if 0 | endif
 
@@ -8,53 +5,44 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-" Required:
-set runtimepath^=~/.vim/bundle/neobundle.vim/
+"------------------------------------------------
+" vim-plug config
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+call plug#begin('~/.vim/plugged')
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+" My plugins:
+Plug 'tpope/vim-fugitive' "git wrapper
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/neocomplete.vim'
+Plug 'davidhalter/jedi-vim' "python autocompletion
+Plug 'ervandew/supertab' "tab completion
+Plug 'scrooloose/syntastic' "syntax checker
+Plug 'ivanov/vim-ipython'
+Plug 'Raimondi/delimitMate'
+Plug 'vim-airline/vim-airline'
+Plug 'JuliaLang/julia-vim'
+Plug 'vim-latex/vim-latex' " vim latex suite
+Plug 'tmhedberg/SimpylFold' "python code folding
+"Plug 'greyblake/vim-preview'
+Plug 'tobanw/vim-preview' "markdown to html (my fork with mathjax enabled)
+Plug 'morhetz/gruvbox' "256 color scheme
 
-" My Bundles here:
-NeoBundle 'tpope/vim-fugitive' "git wrapper
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'davidhalter/jedi-vim' "python autocompletion
-NeoBundle 'ervandew/supertab' "tab completion
-NeoBundle 'scrooloose/syntastic' "syntax checker
-NeoBundle 'ivanov/vim-ipython'
-NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'JuliaLang/julia-vim'
-NeoBundle 'vim-latex/vim-latex' " vim latex suite
-NeoBundle 'tmhedberg/SimpylFold' "python code folding
-"NeoBundle 'greyblake/vim-preview'
-NeoBundle 'tobanw/vim-preview' "markdown to html (my fork with mathjax enabled)
-NeoBundle 'morhetz/gruvbox' "256 color scheme
-
-"NeoBundle 'vim-scripts/Smart-Tabs' "tabs for indent, spaces for alignment
+"Plug 'vim-scripts/Smart-Tabs' "tabs for indent, spaces for alignment
 " Smart-Tabs conflicts with supertab
 
-"NeoBundle 'ardagnir/vimbed'
-"NeoBundle 'altercation/vim-colors-solarized'
-"NeoBundle 'vim-scripts/CSApprox'
-"NeoBundle 'flazz/vim-colorschemes'
-
-call neobundle#end()
+"Plug 'ardagnir/vimbed'
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'vim-scripts/CSApprox'
+"Plug 'flazz/vim-colorschemes'
 
 " Required:
-filetype plugin indent on
+call plug#end()
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"end neobundle
 "------------------------------------------------
 
 "various
+filetype plugin indent on
 syntax enable
 set background=dark
 set guifont=Inconsolata\ Bold\ 14
