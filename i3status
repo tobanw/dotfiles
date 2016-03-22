@@ -24,6 +24,7 @@ order += "volume master"
 #order += "run_watch DHCP"
 #order += "run_watch VPN"
 order += "wireless _first_"
+order += "online_status"
 #order += "ethernet _first_"
 order += "disk /"
 order += "battery 1"
@@ -33,7 +34,7 @@ order += "cpu_temperature 0"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = " %quality %essid"
+        format_up = " %quality"
         format_down = " down"
 }
 
