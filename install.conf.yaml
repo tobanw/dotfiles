@@ -2,7 +2,6 @@
 
 - link:
     ~/.vimrc: vimrc
-    ~/.gitconfig: gitconfig
     ~/.zshrc: zshrc
     ~/.tmux.conf: tmux.conf
     ~/.taskrc: taskrc
@@ -10,6 +9,9 @@
     ~/.xinitrc: xinitrc
     ~/.bashrc: bashrc
     ~/.pentadactylrc: pentadactylrc
+    ~/.config/git/config:
+      create: true
+      path: gitconfig
     ~/.config/Xresources:
       create: true
       path: Xresources
