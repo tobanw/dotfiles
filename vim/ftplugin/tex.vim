@@ -8,6 +8,9 @@ set grepprg=grep\ -nH\ $*
 " set biblatex to use biber: 
 let g:Tex_BibtexFlavor='biber'
 
+"compile with xelatex
+let g:Tex_CompileRule_pdf='xelatex --interaction=nonstopmode $*'
+
 " sets pdf as default for compile/view
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats = 'pdf,aux'
