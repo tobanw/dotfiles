@@ -42,6 +42,9 @@
     ~/.config/ranger/rifle.conf:
       create: true
       path: rifle.conf
+    ~/.config/cmus/cmus-status-display:
+      create: true
+      path: cmus-status-display
     ~/.config/nvim/init.vim:
       create: true
       path: vimrc
