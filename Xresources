@@ -11,7 +11,7 @@ xterm*faceSize: 14
 Xft.lcdfilter: lcddefault
 
 ! urxvt config
-URxvt*font: xft:Inconsolata:pixelsize=18:antialias=true:hinting=true
+URxvt*font: xft:Inconsolata:pixelsize=18:antialias=true:hinting=true,xft:Monospace
 ! dark background
 URxvt.reverseVideo: on
 ! scrollback buffer
