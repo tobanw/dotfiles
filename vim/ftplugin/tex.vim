@@ -28,6 +28,9 @@ set iskeyword+=:
 " \k to save and compile
 nmap <leader>k :w<CR> <leader>ll
 
+" `j for inline math delimiters: \(\)
+:call IMAP('`j', '\( <++> \)<++>', 'tex')
+
 " compile main file in modular documents
 " Look for main file by looking in the first 20 lines, same as TeXShop, for:
 " % !TEX root = [filename].tex
