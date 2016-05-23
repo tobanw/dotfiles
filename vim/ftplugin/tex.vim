@@ -28,6 +28,9 @@ set iskeyword+=:
 " \k to save and compile
 nmap <leader>k :w<CR> <leader>ll
 
+" `w expands to \omega instead of \wedge (default)
+:call IMAP('`w', '\omega', 'tex')
+
 " `j for inline math delimiters: \(\)
 :call IMAP('`j', '\( <++> \)<++>', 'tex')
 
