@@ -15,15 +15,47 @@ general {
 }
 
 
+order += "arch_updates"
+order += "weather_yahoo"
+order += "taskwarrior"
 order += "cmus"
 order += "volume master"
 order += "wireless _first_"
 order += "online_status"
-order += "disk /"
 order += "battery 1"
+order += "disk /"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "tztime local"
+
+
+arch_updates {
+		cache_timeout = 10800
+		format = " {pacman}"
+}
+
+weather_yahoo {
+		cache_timeout = 1800
+		woeid =	12765491
+		units = "C"
+		format_today = "{icon}{temp}°"
+		format_forecast = "{icon}{high}°"
+		forecast_include_today = true
+		forecast_text_separator = ""
+}
+
+cmus {
+		cache_timeout = 1
+		indicator_play = ""
+		indicator_pause = ""
+		indicator_stop = ""
+}
+
+volume master {
+		format = " %volume"
+		format_muted = " (%volume)"
+		device = "pulse"
+}
 
 wireless _first_ {
         format_up = " %quality"
@@ -43,19 +75,6 @@ battery 1 {
 		path = "/sys/class/power_supply/BAT1/uevent"
 }
 
-cmus {
-		cache_timeout = 1
-		indicator_play = ""
-		indicator_pause = ""
-		indicator_stop = ""
-}
-
-volume master {
-		format = " %volume"
-		format_muted = " (%volume)"
-		device = "pulse"
-}
-
 cpu_usage {
 		format = " %usage"
 }
@@ -63,7 +82,7 @@ cpu_usage {
 cpu_temperature 0 {
 		format = "%degrees°C"
 		#path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
-		path = "/sys/class/thermal/thermal_zone0/temp"
+		path = "/sys/class/thermal/thermal_zone1/temp"
 		max_threshold = 75
 }
 
