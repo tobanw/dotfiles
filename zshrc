@@ -47,6 +47,9 @@ export TERMINAL=urxvt
 export EDITOR=vim
 export VISUAL=vim
 
+# set browser for rtv
+export BROWSER=qutebrowser
+
 # prevent redundant load in ranger
 RANGER_LOAD_DEFAULT_RC=FALSE
 
