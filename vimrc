@@ -13,7 +13,8 @@ call plug#begin('~/.vim/plugged')
 
 " My plugins:
 Plug 'tpope/vim-fugitive' "git wrapper
-Plug 'Shougo/unite.vim'
+"Plug 'Shougo/unite.vim'
+Plug 'junegunn/fzf.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'davidhalter/jedi-vim' "python autocompletion
 Plug 'ervandew/supertab' "tab completion
@@ -57,6 +58,9 @@ colorscheme gruvbox
 set backup
 set backupdir=~/.vim/backup
 set dir=~/.vim/backup
+
+"yank to end of line
+nnoremap Y y$
 
 "line numbering on
 set number
