@@ -63,7 +63,7 @@ exists() {
 }
 
 # autostart
-exists redshift && redshift &
+#exists redshift && redshift & # using systemd user unit
 
 # xautolock:
 #	lock after duration of inactivity
