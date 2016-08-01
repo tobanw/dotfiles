@@ -53,4 +53,4 @@
       path: vim/ftplugin/
 
 - shell:
-  - [git submodule update --init --recursive, Updating submodules]
+  - [git submodule update --init --recursive, Installing submodules]
