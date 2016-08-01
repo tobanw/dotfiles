@@ -6,15 +6,23 @@ Managed with [`dotbot`][dotbot].
 Move your dotfiles to the `dotfiles` directory, then edit `install.yaml.conf` to specify where each file should be symlinked to.
 Finally, execute the install script: `./install`.
 
+### Submodules
+
+As explained in the [blog post][blog], you can pull in other repos as submodules to automate your dependency management.
+For example, `antigen` and `dotbot` are both submodules here.
+To update them to their latest published version, run `git submodule update --init --remote`.
+(Note: this command could be added to the install script if desired, but I prefer to leave it as a manual update to avoid unexpected changes.)
+
 ### Applications under management
 
-- `vim` and `neobundle`
+- `vim`
 - `zsh` and `antigen`
 - `liquidprompt`
-- `tmux`
 - `ranger`
+- `cmus`
 - `taskwarrior`
 - `zathura`
+- `tmux`
 - `bash`
 - `vifm`
 - `pentadactyl`
@@ -23,3 +31,4 @@ Finally, execute the install script: `./install`.
 
 
 [dotbot]: https://github.com/anishathalye/dotbot
+[blog]: http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
