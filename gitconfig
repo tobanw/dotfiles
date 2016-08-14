@@ -13,3 +13,9 @@
 	clean = git-lfs clean %f
 [branch]
 	autosetuprebase = always
+[github]
+	user = tobanw
+[status]
+	submoduleSummary = true
+[diff]
+	submodule = log
