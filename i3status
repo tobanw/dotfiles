@@ -23,7 +23,6 @@ order += "volume master"
 order += "wireless _first_"
 order += "online_status"
 order += "battery 1"
-order += "disk /"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "tztime local"
@@ -45,7 +44,7 @@ weather_yahoo {
 }
 
 cmus {
-		cache_timeout = 1
+		cache_timeout = 3
 		indicator_play = ""
 		indicator_pause = ""
 		indicator_stop = ""
@@ -60,6 +59,10 @@ volume master {
 wireless _first_ {
         format_up = " %quality"
         format_down = " down"
+}
+
+online_status {
+		cache_timeout = 20
 }
 
 battery 1 {
