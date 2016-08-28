@@ -9,23 +9,22 @@ endif
 " vim-plug config
 
 " Required:
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " My plugins:
 Plug 'tpope/vim-fugitive' "git wrapper
-"Plug 'Shougo/unite.vim'
 Plug 'junegunn/fzf.vim'
-Plug 'Shougo/neocomplete.vim'
-Plug 'davidhalter/jedi-vim' "python autocompletion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'}
+Plug 'zchee/deoplete-jedi'
 Plug 'ervandew/supertab' "tab completion
 Plug 'scrooloose/syntastic' "syntax checker
 Plug 'ivanov/vim-ipython'
 Plug 'Raimondi/delimitMate'
 Plug 'vim-airline/vim-airline'
 Plug 'JuliaLang/julia-vim'
-Plug 'vim-latex/vim-latex' " vim latex suite
+Plug 'vim-latex/vim-latex' "vim latex suite
 Plug 'tmhedberg/SimpylFold' "python code folding
-Plug 'Konfekt/FastFold' " folding performance
+Plug 'Konfekt/FastFold' "folding performance
 "Plug 'greyblake/vim-preview'
 Plug 'tobanw/vim-preview' "markdown to html (my fork with mathjax enabled)
 Plug 'morhetz/gruvbox' "256 color scheme
@@ -33,6 +32,11 @@ Plug 'morhetz/gruvbox' "256 color scheme
 "Plug 'vim-scripts/Smart-Tabs' "tabs for indent, spaces for alignment
 " Smart-Tabs conflicts with supertab
 
+" Replaced by neovim plugins
+"Plug 'Shougo/neocomplete.vim'
+
+" Discard pile
+"Plug 'Shougo/unite.vim'
 "Plug 'ardagnir/vimbed'
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'vim-scripts/CSApprox'
@@ -56,8 +60,8 @@ colorscheme gruvbox
 
 "enable backup files, and put backup and swap files in ~/.vim/backup
 set backup
-set backupdir=~/.vim/backup
-set dir=~/.vim/backup
+set backupdir=~/.config/nvim/backup
+set dir=~/.config/nvim/backup
 
 "yank to end of line
 nnoremap Y y$
@@ -91,15 +95,18 @@ let g:SuperTabDefaultCompletionType = "context"
 "tab goes down the list
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
-"jedi-vim (disable auto-complete on .)
-let g:jedi#popup_on_dot = 0
-"don't highlight first entry
-let g:jedi#popup_select_first = 0
-
 "vim-latex: the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
+
+"deoplete
+let g:deoplete#enable_at_startup = 1
+
+"jedi-vim (disable auto-complete on .)
+let g:jedi#popup_on_dot = 0
+"don't highlight first entry
+let g:jedi#popup_select_first = 0
 
 "neocomplete -- some config options from readme ---------------------
 " Use neocomplete.

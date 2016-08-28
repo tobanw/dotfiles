@@ -44,8 +44,8 @@ antigen apply
 export TERMINAL=urxvt
 
 # set default editor (don't need bindkey -v as zsh infers from this)
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 # set browser for rtv
 export BROWSER=qutebrowser

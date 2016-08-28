@@ -27,6 +27,12 @@
     ~/.config/i3status/py3status:
       create: true
       path: py3status/
+    ~/.config/nvim/init.vim:
+      create: true
+      path: vimrc
+    ~/.config/nvim/ftplugin:
+      create: true
+      path: vim/ftplugin/
     ~/.vim/ftplugin:
       create: true
       path: vim/ftplugin/
@@ -45,12 +51,6 @@
     ~/.config/cmus/cmus-status-display:
       create: true
       path: cmus-status-display
-    ~/.config/nvim/init.vim:
-      create: true
-      path: vimrc
-    ~/.config/nvim/ftplugin:
-      create: true
-      path: vim/ftplugin/
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
