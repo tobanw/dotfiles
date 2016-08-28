@@ -68,8 +68,11 @@ fi
 #
 #===================================
 
-# -i for interactive. Prompts before overwriting/removing.
+alias oldvim='/usr/bin/vim'
+alias vim='nvim'
 alias rm='echo dude... use trash-put'
+
+# -i for interactive. Prompts before overwriting/removing.
 alias cp='cp -i'
 alias mv='mv -i'
 
