@@ -100,6 +100,9 @@ let g:SuperTabContextDefaultCompletionType = "<c-n>"
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
+"syntastic
+let g:syntastic_python_checkers = ['flake8']
+
 "deoplete
 let g:deoplete#enable_at_startup = 1
 
