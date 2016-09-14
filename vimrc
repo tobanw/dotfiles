@@ -22,7 +22,8 @@ Plug 'ivanov/vim-ipython'
 Plug 'Raimondi/delimitMate'
 Plug 'vim-airline/vim-airline'
 Plug 'JuliaLang/julia-vim'
-Plug 'vim-latex/vim-latex' "vim latex suite
+"Plug 'vim-latex/vim-latex' "vim latex suite
+Plug 'lervag/vimtex'
 Plug 'tmhedberg/SimpylFold' "python code folding
 Plug 'Konfekt/FastFold' "folding performance
 "Plug 'greyblake/vim-preview'
@@ -95,8 +96,8 @@ let g:SuperTabDefaultCompletionType = "context"
 "tab goes down the list
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
-"vim-latex: the filetype of empty .tex files defaults to
-" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The filetype of empty .tex files defaults to 'plaintex'
+" instead of 'tex', which results in latex plugins not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 

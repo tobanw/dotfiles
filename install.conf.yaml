@@ -1,13 +1,13 @@
-- clean: ['~', '~/.config', '~/.config/i3status', '~/.config/i3', '~/.config/ranger', '.vim']
+- clean: ['~', '~/.config']
 
 - link:
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.tmux.conf: tmux.conf
     ~/.taskrc: taskrc
-    ~/.liquidpromptrc: liquidpromptrc
     ~/.xinitrc: xinitrc
     ~/.bashrc: bashrc
+    ~/.latexmkrc: latexmkrc
     ~/.pentadactylrc: pentadactylrc
     ~/.config/git/config:
       create: true
@@ -36,6 +36,9 @@
     ~/.vim/ftplugin:
       create: true
       path: vim/ftplugin/
+    ~/.config/liquidpromptrc:
+      create: true
+      path: liquidpromptrc
     ~/.config/zathura/zathurarc:
       create: true
       path: zathurarc
