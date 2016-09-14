@@ -40,7 +40,7 @@ antigen bundle nojhan/liquidprompt
 antigen apply
 
 
-# set default terminal to urxvt
+# set i3's default terminal to urxvt
 export TERMINAL=urxvt
 
 # set default editor (don't need bindkey -v as zsh infers from this)
@@ -53,8 +53,8 @@ export BROWSER=qutebrowser
 # prevent redundant load in ranger
 RANGER_LOAD_DEFAULT_RC=FALSE
 
-# added by Anaconda3 2.1.0 installer
-export PATH="/home/toban/utilities/anaconda3/bin:$PATH"
+# Anaconda python: after system python
+export PATH="$PATH:/home/toban/utilities/anaconda3/bin"
 
 # ruby gems (local installs)
 if which ruby >/dev/null && which gem >/dev/null; then
