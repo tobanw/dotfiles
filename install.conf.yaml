@@ -24,6 +24,9 @@
     ~/.config/i3status/config:
       create: true
       path: i3status
+    ~/.config/dunst/dunstrc:
+      create: true
+      path: dunstrc
     ~/.config/i3status/py3status:
       create: true
       path: py3status/

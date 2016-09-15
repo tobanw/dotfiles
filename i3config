@@ -26,6 +26,13 @@ font pango:Inconsolata, FontAwesome Bold 12
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+
+# Autostart applications for i3 session
+
+# dunst: notifications
+exec --no-startup-id dunst
+
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
