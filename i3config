@@ -33,11 +33,15 @@ font pango:Inconsolata, FontAwesome Bold 12
 exec --no-startup-id dunst
 
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
 # start a terminal
 bindsym $mod+t exec i3-sensible-terminal
+
+
+# disable mouse warping when moving between displays
+mouse_warping none
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -88,22 +92,33 @@ bindsym $mod+v split h
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# window utilities mode
+set $window_mode "window: [m]ove to [s]cratchpad, [p]arent [c]hild, [f]loat [space], layout sp[l]it [t]abbed" 
+mode $window_mode {
+		# move window to scratchpad
+		bindsym m move scratchpad
+		# show/hide scratchpad
+		bindsym s scratchpad show
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+		# change container layout (tabbed, toggle split)
+		bindsym t layout tabbed
+		bindsym l layout toggle split
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+		# toggle tiling / floating
+		bindsym f floating toggle
+		# change focus between tiling / floating windows
+		bindsym space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
+		# focus the parent container
+		bindsym p focus parent
+		# focus the child container
+		bindsym c focus child
 
-# focus the child container
-#bindsym $mod+d focus child
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+w mode $window_mode 
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -160,7 +175,6 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 # passthrough mode for getting around key binding conflicts
