@@ -50,6 +50,9 @@ export VISUAL=nvim
 # set browser for rtv
 export BROWSER=qutebrowser
 
+# set location of weechat config
+export WEECHAT_HOME=~/.config/weechat
+
 # prevent redundant load in ranger
 RANGER_LOAD_DEFAULT_RC=FALSE
 

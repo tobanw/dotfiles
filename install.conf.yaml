@@ -8,7 +8,6 @@
     ~/.xinitrc: xinitrc
     ~/.bashrc: bashrc
     ~/.latexmkrc: latexmkrc
-    ~/.pentadactylrc: pentadactylrc
     ~/.config/git/config:
       create: true
       path: gitconfig
@@ -45,15 +44,15 @@
     ~/.config/zathura/zathurarc:
       create: true
       path: zathurarc
-    ~/.vifm/vifmrc:
-      create: true
-      path: vifmrc
     ~/.config/ranger/rc.conf:
       create: true
-      path: ranger.conf
+      path: ranger/ranger.conf
     ~/.config/ranger/rifle.conf:
       create: true
-      path: rifle.conf
+      path: ranger/rifle.conf
+    ~/.config/ranger/commands.py:
+      create: true
+      path: ranger/commands.py
     ~/.config/cmus/cmus-status-display:
       create: true
       path: cmus-status-display
