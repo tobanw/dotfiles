@@ -71,6 +71,11 @@ fi
 #
 #===================================
 
+# some pacman convenience aliases
+alias pacup='sudo pacman -Syu'
+alias pacinfo='pacman -Qi'
+# pacsearch is already provided
+
 alias oldvim='/usr/bin/vim'
 alias vim='nvim'
 alias rm='echo dude... use trash-put'
