@@ -11,10 +11,15 @@
 	smudge = git-lfs smudge %f
 	required = true
 	clean = git-lfs clean %f
-[branch]
-	autosetuprebase = always
 [github]
 	user = tobanw
+
+# git pull rebases without flattening local merges
+# (instead of branch.autosetuprebase = always)
+[pull]
+	rebase = preserve
+
+# show info about submodules
 [status]
 	submoduleSummary = true
 [diff]

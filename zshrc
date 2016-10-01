@@ -78,11 +78,11 @@ alias pacinfo='pacman -Qi'
 
 alias oldvim='/usr/bin/vim'
 alias vim='nvim'
-alias rm='echo dude... use trash-put'
 
 # -i for interactive. Prompts before overwriting/removing.
 alias cp='cp -i'
 alias mv='mv -i'
+alias rm='rm -i'
 
 alias mkdir='mkdir -p' # automatically make parents
 alias ls='ls -h --color=auto'
