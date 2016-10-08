@@ -71,8 +71,9 @@ fi
 #
 #===================================
 
-# some pacman convenience aliases
-alias pacup='sudo pacman -Syu'
+# some pacman/pacmatic convenience aliases
+alias pacup='sudo pacmatic -Syu'
+alias pacin='sudo pacmatic -S'
 alias pacinfo='pacman -Qi'
 # pacsearch is already provided
 
