@@ -49,29 +49,32 @@ xset s off -dpms
 
 # Initial display setup -- using autorandr for live swapping!
 if [[ "$(xrandr | grep 'HDMI1 connected')" != "" ]]; then
-	sleep 1 && xrandr --output eDP1 --auto --output HDMI1 --auto --right-of eDP1
+	sleep 1 && xrandr --output eDP1 --off --output HDMI1 --auto
 else
 	sleep 1 && xrandr --output eDP1 --auto --output HDMI1 --off
 fi
-
-# random wallpaper from ~/.wallpaper
-feh --bg-fill --no-fehbg --randomize ~/.wallpaper/* &
 
 # existence function
 exists() {
 	type "$1" >/dev/null 2>/dev/null
 }
 
-# autostart
-#exists redshift && redshift & # using systemd user unit
+# random wallpaper from ~/.wallpaper
+exists feh && feh --bg-fill --no-fehbg --randomize ~/.wallpaper/* &
 
 # xautolock:
-#	lock after duration of inactivity
-#	suspend after an additional duration
+#	lock after duration (min) of inactivity (-n necessary for killer to work)
+#	notify (sec) before locking
+#	killer: suspend after an additional duration (min)
 #	don't lock if mouse in top right corner
-exists xautolock && xautolock -time 15 -locker 'i3lock --color=000000' \
-	-killtime 45 -killer 'systemctl suspend' \
+exists xautolock && xautolock -time 10 -locker "i3lock -n --color=000000" \
+	-notify 30 \
+	-notifier "notify-send --urgency=critical --expire-time=25000 'xautolock' 'LOCKING in 30s'" \
+	-killtime 10 -killer "systemctl suspend" \
 	-corners 0-00 &
+
+# start up ssh-agent
+eval $(ssh-agent)
 
 # NB: lines following `exec` are ignored
 exec i3
