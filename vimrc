@@ -86,6 +86,9 @@ set scrolloff=3
 "hide menu bar, toolbar, scrollbar
 set guioptions=ai
 
+"vim-preview: browser priority
+let g:PreviewBrowsers = "qutebrowser,firefox,chromium"
+
 "airline
 set laststatus=2
 "enable top tab bar

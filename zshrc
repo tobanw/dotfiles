@@ -47,8 +47,11 @@ export TERMINAL=urxvt
 export EDITOR=nvim
 export VISUAL=nvim
 
-# set browser for rtv
+# set browser (used by rtv, urlscan)
 export BROWSER=qutebrowser
+
+# rtv url hinter/extracter
+export RTV_URLVIEWER=urlscan
 
 # set location of weechat config
 export WEECHAT_HOME=~/.config/weechat
