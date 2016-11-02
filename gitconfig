@@ -2,7 +2,7 @@
 	email = tobanw@gmail.com
 	name = Toban Wiebe
 [core]
-	editor = vim
+	editor = nvim
 [color]
 	ui = auto
 [push]
@@ -24,3 +24,12 @@
 	submoduleSummary = true
 [diff]
 	submodule = log
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[difftool "vimdiff"]
+	path = nvim
+[mergetool "vimdiff"]
+	path = nvim
+[difftool]
+	prompt = false
