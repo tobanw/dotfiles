@@ -13,17 +13,17 @@ call plug#begin('~/.config/nvim/plugged')
 
 " My plugins:
 Plug 'tpope/vim-fugitive' "git wrapper
-Plug 'junegunn/fzf.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'}
-Plug 'zchee/deoplete-jedi'
+Plug 'junegunn/fzf.vim' "fuzzy finder
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'} "async completions
 Plug 'ervandew/supertab' "tab completion
-Plug 'scrooloose/syntastic' "syntax checker
+Plug 'neomake/neomake' "async syntax checker
 Plug 'ivanov/vim-ipython'
 Plug 'Raimondi/delimitMate'
-Plug 'vim-airline/vim-airline'
-Plug 'JuliaLang/julia-vim'
-"Plug 'vim-latex/vim-latex' "vim latex suite
-Plug 'lervag/vimtex'
+Plug 'vim-airline/vim-airline' "airline status bar
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'JuliaEditorSupport/deoplete-julia'
+Plug 'lervag/vimtex' "latex
+Plug 'zchee/deoplete-jedi' "python completions
 Plug 'tmhedberg/SimpylFold' "python code folding
 Plug 'Konfekt/FastFold' "folding performance
 "Plug 'greyblake/vim-preview'
@@ -98,14 +98,19 @@ set laststatus=2
 let g:SuperTabDefaultCompletionType = "context"
 "tab goes down the list
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
+"close the preview window after completing
+let g:SuperTabClosePreviewOnPopupClose = 1
 
 " The filetype of empty .tex files defaults to 'plaintex'
 " instead of 'tex', which results in latex plugins not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
-"syntastic
-let g:syntastic_python_checkers = ['flake8']
+"neomake
+"auto-lint on write
+autocmd! BufWritePost * Neomake
+"choose syntax checkers
+let g:neomake_python_enabled_makers = ['flake8']
 
 "deoplete
 let g:deoplete#enable_at_startup = 1
