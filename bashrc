@@ -35,7 +35,7 @@ complete -cf sudo
 
 # can install liquidprompt via AUR
 # load Liquid Prompt: use commands prompt_on and prompt_off to toggle
-# [[ $- = *i* ]] && source liquidprompt
+# source liquidprompt
 
 # enable readline's vi mode
 set -o vi
@@ -53,8 +53,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias mkdir='mkdir -p' # automatically make parents
-alias ls='ls -h --color=auto'
-alias ll='ls -Alhv --color=auto --group-directories-first'
+alias ls='ls -h --color=auto --group-directories-first'
+alias ll='ls -Alv'
 
 
 
