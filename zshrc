@@ -57,7 +57,7 @@ export RTV_URLVIEWER=urlscan
 export WEECHAT_HOME=~/.config/weechat
 
 # prevent redundant load in ranger
-RANGER_LOAD_DEFAULT_RC=FALSE
+export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # Anaconda python: after system python
 export PATH="$PATH:/home/toban/utilities/anaconda3/bin"
@@ -89,8 +89,8 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 alias mkdir='mkdir -p' # automatically make parents
-alias ls='ls -h --color=auto'
-alias ll='ls -Alhv --color=auto --group-directories-first'
+alias ls='ls -h --color=auto --group-directories-first'
+alias ll='ls -Alv'
 
 # ssh into tesla server with compatible terminal emulator
 alias tesla='TERM=xterm ssh tesla'
