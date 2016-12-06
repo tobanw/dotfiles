@@ -37,6 +37,9 @@ exec --no-startup-id dunst
 bindsym $mod+t exec i3-sensible-terminal
 
 
+# hide borders intelligently
+hide_edge_borders smart
+
 # disable mouse warping when moving between displays
 mouse_warping none
 
