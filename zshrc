@@ -17,7 +17,7 @@ setopt correct
 setopt noclobber
 
 
-# load antigen
+# load antigen plugin manager
 source ~/utilities/dotfiles/antigen/antigen.zsh
 
 # load the oh-my-zsh library

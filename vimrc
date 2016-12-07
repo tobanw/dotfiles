@@ -59,10 +59,10 @@ let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
-"enable backup files, and put backup and swap files in ~/.vim/backup
+"enable backup files, and put backup and swap files in same place as ShaDa
 set backup
-set backupdir=~/.config/nvim/backup
-set dir=~/.config/nvim/backup
+set backupdir=~/.local/share/nvim/backup
+set dir=~/.local/share/nvim/swap
 
 "yank to end of line
 nnoremap Y y$

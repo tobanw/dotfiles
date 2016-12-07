@@ -69,7 +69,7 @@ exists feh && feh --bg-fill --no-fehbg --randomize ~/.wallpaper/* &
 #	don't lock if mouse in top right corner
 exists xautolock && xautolock -time 10 -locker "i3lock -n --color=000000" \
 	-notify 30 \
-	-notifier "notify-send --urgency=critical --expire-time=20000 'xautolock' 'LOCKING in 30s'" \
+	-notifier "notify-send --urgency=critical --expire-time=15000 'xautolock' 'LOCKING in 30s'" \
 	-killtime 30 -killer "systemctl suspend" \
 	-corners 0-00 &
 
