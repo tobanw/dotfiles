@@ -16,6 +16,7 @@ unsetopt beep
 setopt correct
 setopt noclobber
 
+
 # load antigen
 source ~/utilities/dotfiles/antigen/antigen.zsh
 
@@ -24,17 +25,17 @@ antigen use oh-my-zsh
 
 # bundles from default repo (oh-my-zsh)
 # antigen bundle git
-
 # enhanced vi mode
 antigen bundle vi-mode
 # taskwarrior completions
 antigen bundle taskwarrior
-# syntax highlighting
-antigen bundle zsh-users/zsh-syntax-highlighting
+
 # 256 color terminal
 antigen bundle chrissicool/zsh-256color
 # liquidprompt
 antigen bundle nojhan/liquidprompt
+# syntax highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 # tell antigen that you're done
 antigen apply
@@ -55,9 +56,6 @@ export RTV_URLVIEWER=urlscan
 
 # set location of weechat config
 export WEECHAT_HOME=~/.config/weechat
-
-# prevent redundant load in ranger
-export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # Anaconda python: after system python
 export PATH="$PATH:/home/toban/utilities/anaconda3/bin"
