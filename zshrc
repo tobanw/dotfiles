@@ -10,35 +10,12 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# options
+# zsh options
 setopt autocd
 unsetopt beep
 setopt correct
 setopt noclobber
 
-
-# load antigen plugin manager
-source ~/utilities/dotfiles/antigen/antigen.zsh
-
-# load the oh-my-zsh library
-antigen use oh-my-zsh
-
-# bundles from default repo (oh-my-zsh)
-# antigen bundle git
-# enhanced vi mode
-antigen bundle vi-mode
-# taskwarrior completions
-antigen bundle taskwarrior
-
-# 256 color terminal
-antigen bundle chrissicool/zsh-256color
-# liquidprompt
-antigen bundle nojhan/liquidprompt
-# syntax highlighting
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-# tell antigen that you're done
-antigen apply
 
 
 # set i3's default terminal to urxvt
@@ -54,21 +31,70 @@ export BROWSER=qutebrowser
 # rtv url hinter/extracter
 export RTV_URLVIEWER=urlscan
 
+# dotfiles repo
+export DOTFILES="$HOME/utilities/dotfiles"
+
+# add my scripts to PATH
+export PATH="$HOME/.local/bin:$PATH"
+
+# zplug directory
+export ZPLUG_HOME="$HOME/.local/share/zplug"
+
 # set location of weechat config
-export WEECHAT_HOME=~/.config/weechat
+export WEECHAT_HOME="$HOME/.config/weechat"
 
 # Anaconda python: after system python
 export PATH="$PATH:/home/toban/utilities/anaconda3/bin"
 
 # ruby gems (local installs)
 if which ruby >/dev/null && which gem >/dev/null; then
-	PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+	export PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
+
+
+#===================================
+# PLUGINS
+#
+# First install `zplug` from AUR (or install directly)
+#===================================
+
+# load zplug
+source /usr/share/zsh/scripts/zplug/init.zsh # AUR install location
+
+# 256 color terminal
+zplug chrissicool/zsh-256color
+# liquidprompt
+zplug nojhan/liquidprompt
+# sane options
+zplug willghatch/zsh-saneopt
+# syntax highlighting
+zplug zsh-users/zsh-syntax-highlighting
+# notifications for long-running commands
+zplug marzocchi/zsh-notify
+
+# enhanced vi mode
+zplug plugins/vi-mode, from:oh-my-zsh
+# taskwarrior completions
+zplug plugins/taskwarrior, from:oh-my-zsh
+# all-in-one extracter
+zplug plugins/extract, from:oh-my-zsh
+# colored man pages
+zplug plugins/colored-man-pages, from:oh-my-zsh
+
+# install new plugins
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# source plugins and add commands to PATH
+zplug load
+
 
 #===================================
 # ALIASES
-#
-# Toban pulled many of these from http://tldp.org/LDP/abs/html/sample-bashrc.html 
 #
 #===================================
 
@@ -92,22 +118,3 @@ alias ll='ls -Alv'
 
 # ssh into tesla server with compatible terminal emulator
 alias tesla='TERM=xterm ssh tesla'
-
-
-#===================================
-# MAN PAGE COLORS
-#
-# Toban pulled this from https://wiki.archlinux.org/index.php/Man_page#Colored_man_pages
-#
-#===================================
-
-man() {
-    env LESS_TERMCAP_mb=$'\E[01;31m' \
-    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-    LESS_TERMCAP_me=$'\E[0m' \
-    LESS_TERMCAP_se=$'\E[0m' \
-    LESS_TERMCAP_so=$'\E[38;5;246m' \
-    LESS_TERMCAP_ue=$'\E[0m' \
-    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
-    man "$@"
-}

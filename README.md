@@ -9,14 +9,15 @@ Finally, execute the install script: `./install`.
 ### Submodules
 
 As explained in the [blog post][blog], you can pull in other repos as submodules to automate your dependency management.
-For example, `antigen` and `dotbot` are both submodules here.
-To update them to their latest published version, run `git submodule update --init --remote`.
+For example, `dotbot` manages itself as a submodule here.
+To update them to their latest published version, run `git submodule update --remote`.
 (Note: this command could be added to the install script if desired, but I prefer to leave it as a manual update to avoid unexpected changes.)
 
-### Applications under management
+### Configs under management
 
 - `vim`
-- `zsh` and `antigen`
+- `zsh`
+- `git`
 - `liquidprompt`
 - `ranger`
 - `cmus`
@@ -26,8 +27,10 @@ To update them to their latest published version, run `git submodule update --in
 - `bash`
 - `vifm`
 - `pentadactyl`
+- `latexmk`
 - `i3`
 - `xinit`
+- `dunst`
 
 
 [dotbot]: https://github.com/anishathalye/dotbot
