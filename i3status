@@ -30,6 +30,7 @@ order += "tztime local"
 
 arch_updates {
 		cache_timeout = 3600
+		hide_if_zero = true
 		format = " {pacman}"
 }
 
