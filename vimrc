@@ -26,8 +26,7 @@ Plug 'lervag/vimtex' "latex
 Plug 'zchee/deoplete-jedi' "python completions
 Plug 'tmhedberg/SimpylFold' "python code folding
 Plug 'Konfekt/FastFold' "folding performance
-"Plug 'greyblake/vim-preview'
-Plug 'tobanw/vim-preview' "markdown to html (my fork with mathjax enabled)
+Plug 'tobanw/vim-preview' "markdown preview (fork of 'greyblake/vim-preview' with mathjax enabled)
 Plug 'morhetz/gruvbox' "256 color scheme
 
 "Plug 'vim-scripts/Smart-Tabs' "tabs for indent, spaces for alignment
@@ -35,22 +34,31 @@ Plug 'morhetz/gruvbox' "256 color scheme
 
 " Replaced by neovim plugins
 "Plug 'Shougo/neocomplete.vim'
+"Plug 'vim-syntastic/syntastic'
+"Plug 'davidhalter/jedi-vim' "python completions
 
 " Discard pile
 "Plug 'Shougo/unite.vim'
 "Plug 'ardagnir/vimbed'
-"Plug 'altercation/vim-colors-solarized'
-"Plug 'vim-scripts/CSApprox'
-"Plug 'flazz/vim-colorschemes'
 
 " Required:
 call plug#end()
 
 "------------------------------------------------
 
-"various
-filetype plugin indent on
-syntax enable
+"note: neovim already uses sensible defaults; see `:help defaults`
+"for vim, use `tpope/vim-sensible`
+
+"filetype plugin indent on
+"syntax enable
+"set autoindent
+
+"enable backup files, and put backup and swap files in same place as ShaDa
+" neovim defaults
+"set backupdir=~/.local/share/nvim/backup
+"set dir=~/.local/share/nvim/swap
+
+"looks
 set background=dark
 set guifont=Inconsolata\ Bold\ 14
 
@@ -58,10 +66,6 @@ set guifont=Inconsolata\ Bold\ 14
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
-
-"enable backup files, and put backup and swap files in same place as ShaDa
-set backupdir=~/.local/share/nvim/backup
-set dir=~/.local/share/nvim/swap
 
 "yank to end of line
 nnoremap Y y$
@@ -74,12 +78,11 @@ set noexpandtab "don't convert tabs to spaces
 set tabstop=4 "tab is 4 characters
 set shiftwidth=4 "indenting motion <</>>
 set softtabstop=4 " backspace over expanded tabs
-set autoindent
 
 "defaults, overridden by ftplugin
 set textwidth=0
 
-"lines to keep above/below cursor
+"lines to keep onscreen above/below cursor
 set scrolloff=3
 
 "hide menu bar, toolbar, scrollbar
@@ -113,40 +116,3 @@ let g:neomake_python_enabled_makers = ['flake8']
 
 "deoplete
 let g:deoplete#enable_at_startup = 1
-
-"jedi-vim (disable auto-complete on .)
-let g:jedi#popup_on_dot = 0
-"don't highlight first entry
-let g:jedi#popup_select_first = 0
-
-"neocomplete -- some config options from readme ---------------------
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-" make neocomplcache use jedi#completions omni function for python scripts
-if !exists('g:neocomplcache_omni_functions')
-    let g:neocomplcache_omni_functions = {}
-    let g:neocomplcache_omni_functions['python'] = 'jedi#completions'
-endif
-" make Vim call omni function when below patterns matchs
-let g:neocomplcache_force_omni_patterns = {}
-let g:neocomplcache_force_omni_patterns.python = '[^. \t]\.\w*'
-"---------------------------------------------------------------------
