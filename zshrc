@@ -67,6 +67,8 @@ zplug chrissicool/zsh-256color
 zplug nojhan/liquidprompt
 # sane options
 zplug willghatch/zsh-saneopt
+# autosuggestions
+zplug zsh-users/zsh-autosuggestions
 # syntax highlighting
 zplug zsh-users/zsh-syntax-highlighting
 # notifications for long-running commands
