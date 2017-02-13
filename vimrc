@@ -12,6 +12,8 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 " My plugins:
+Plug 'francoiscabrol/ranger.vim' "ranger integration
+Plug 'rbgrouleff/bclose.vim' "neovim dependency for ranger.vim
 Plug 'tpope/vim-fugitive' "git wrapper
 Plug 'junegunn/fzf.vim' "fuzzy finder
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'} "async completions
