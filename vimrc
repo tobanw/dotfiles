@@ -9,35 +9,43 @@ endif
 " vim-plug config
 
 " Required:
-call plug#begin('~/.config/nvim/plugged')
+if has('nvim')
+	call plug#begin('~/.config/nvim/plugged')
+else
+	call plug#begin('~/.vim/plugged')
+endif
 
 " My plugins:
 Plug 'francoiscabrol/ranger.vim' "ranger integration
-Plug 'rbgrouleff/bclose.vim' "neovim dependency for ranger.vim
 Plug 'tpope/vim-fugitive' "git wrapper
 Plug 'junegunn/fzf.vim' "fuzzy finder
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'} "async completions
 Plug 'ervandew/supertab' "tab completion
 Plug 'neomake/neomake' "async syntax checker
 Plug 'ivanov/vim-ipython'
-Plug 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate' "auto insert matching delimiters
+Plug 'tpope/vim-surround' "text-object mappings for delimiters
+Plug 'tpope/vim-repeat' "provides repeat for compatible plugins
 Plug 'vim-airline/vim-airline' "airline status bar
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'JuliaEditorSupport/deoplete-julia'
 Plug 'lervag/vimtex' "latex
-Plug 'zchee/deoplete-jedi' "python completions
 Plug 'tmhedberg/SimpylFold' "python code folding
 Plug 'Konfekt/FastFold' "folding performance
 Plug 'tobanw/vim-preview' "markdown preview (fork of 'greyblake/vim-preview' with mathjax enabled)
 Plug 'morhetz/gruvbox' "256 color scheme
 
+" neovim only
+if has('nvim')
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'} "async completions
+	Plug 'JuliaEditorSupport/deoplete-julia'
+	Plug 'zchee/deoplete-jedi' "python completions
+	Plug 'rbgrouleff/bclose.vim' "neovim dependency for ranger.vim
+else " vim only
+	Plug 'Shougo/neocomplete.vim'
+	Plug 'davidhalter/jedi-vim' "python completions
+endif
+
 "Plug 'vim-scripts/Smart-Tabs' "tabs for indent, spaces for alignment
 " Smart-Tabs conflicts with supertab
-
-" Replaced by neovim plugins
-"Plug 'Shougo/neocomplete.vim'
-"Plug 'vim-syntastic/syntastic'
-"Plug 'davidhalter/jedi-vim' "python completions
 
 " Discard pile
 "Plug 'Shougo/unite.vim'
