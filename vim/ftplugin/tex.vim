@@ -7,7 +7,9 @@ nmap <leader>k :w<CR> :VimtexCompileSS<CR>
 let g:vimtex_view_method = 'zathura'
 
 " latexmk: use separate output files directory
-let g:vimtex_latexmk_build_dir = 'build'
+let g:vimtex_compiler_latexmk = {
+    \ 'build_dir' : 'build',
+    \}
 
 " deoplete completions for vimtex
 if !exists('g:deoplete#omni#input_patterns')
