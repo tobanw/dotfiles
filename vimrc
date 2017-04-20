@@ -122,7 +122,7 @@ let g:tex_flavor='latex'
 "auto-lint on write
 autocmd! BufWritePost * Neomake
 "choose syntax checkers
-let g:neomake_python_enabled_makers = ['flake8']
+let g:neomake_python_enabled_makers = ['pylint']
 
 "deoplete
 let g:deoplete#enable_at_startup = 1
