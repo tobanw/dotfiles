@@ -17,7 +17,6 @@ general {
 
 order += "arch_updates"
 order += "weather_yahoo"
-order += "taskwarrior"
 order += "cmus"
 order += "volume master"
 order += "wireless _first_"
@@ -36,7 +35,7 @@ arch_updates {
 
 weather_yahoo {
 		cache_timeout = 1800
-		woeid =	12765491
+		woeid =	2467861
 		units = "C"
 		format_today = "{icon}{temp}°"
 		format_forecast = "{icon}{high}°"

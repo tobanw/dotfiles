@@ -46,6 +46,10 @@ export WEECHAT_HOME="$HOME/.config/weechat"
 # Anaconda python: after system python
 export PATH="$PATH:/home/toban/utilities/anaconda3/bin"
 
+# completions for google-cloud-sdk
+source /opt/google-cloud-sdk/completion.zsh.inc
+source /opt/google-cloud-sdk/path.zsh.inc
+
 # ruby gems (local installs)
 if which ruby >/dev/null && which gem >/dev/null; then
 	export PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
@@ -111,7 +115,6 @@ zplug load
 
 #===================================
 # ALIASES
-#
 #===================================
 
 # some pacman/pacmatic convenience aliases

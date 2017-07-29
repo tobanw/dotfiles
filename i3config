@@ -187,13 +187,16 @@ mode "PASSTHROUGH" {
 bindsym $mod+Escape mode "PASSTHROUGH"
 
 # Pulse Audio controls
-# sound up/down
 # # TODO auto detect the sink (0 hdmi, 1 internal)
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
-bindsym Mod1+Control+equal exec --no-startup-id pactl set-sink-volume 1 +5%
-bindsym Mod1+Control+minus exec --no-startup-id pactl set-sink-volume 1 -5%
-bindsym Mod1+Control+m exec --no-startup-id pactl set-sink-mute 1 toggle
+
+# if graphics card disabled, need to use sink 0, so just giving absolute reference instead
+set $sink alsa_output.pci-0000_00_1b.0.analog-stereo
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $sink +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $sink -5%
+bindsym Mod1+Control+equal exec --no-startup-id pactl set-sink-volume $sink +5%
+bindsym Mod1+Control+minus exec --no-startup-id pactl set-sink-volume $sink -5%
+bindsym Mod1+Control+m exec --no-startup-id pactl set-sink-mute $sink toggle
 
 # cmus controls
 bindsym Mod1+Control+slash exec --no-startup-id cmus-remote --pause

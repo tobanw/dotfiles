@@ -10,7 +10,7 @@ endif
 
 " Required:
 if has('nvim')
-	call plug#begin('~/.config/nvim/plugged')
+	call plug#begin('~/.local/share/nvim/plugged')
 else
 	call plug#begin('~/.vim/plugged')
 endif
@@ -63,9 +63,10 @@ call plug#end()
 "syntax enable
 "set autoindent
 
-"enable backup files, and put backup and swap files in same place as ShaDa
-" neovim defaults
-"set backupdir=~/.local/share/nvim/backup
+"enable backup files, and put backup files in same place as swap
+set backupdir=~/.local/share/nvim/backup
+set writebackup
+" neovim uses proper default for swap
 "set dir=~/.local/share/nvim/swap
 
 "looks
