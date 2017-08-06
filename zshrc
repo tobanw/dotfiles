@@ -46,6 +46,9 @@ export WEECHAT_HOME="$HOME/.config/weechat"
 # Anaconda python: after system python
 export PATH="$PATH:/home/toban/utilities/anaconda3/bin"
 
+# Python packages: allows system python to load anaconda packages (for pylint)
+export PYTHONPATH="$PYTHONPATH:/home/toban/utilities/anaconda3/lib/python3.6/site-packages"
+
 # completions for google-cloud-sdk
 source /opt/google-cloud-sdk/completion.zsh.inc
 source /opt/google-cloud-sdk/path.zsh.inc

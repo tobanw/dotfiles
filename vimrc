@@ -111,8 +111,8 @@ set laststatus=2
 let g:SuperTabDefaultCompletionType = "context"
 "tab goes down the list
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
-"close the preview window after completing
-let g:SuperTabClosePreviewOnPopupClose = 1
+"auto-close the preview window after completing
+"let g:SuperTabClosePreviewOnPopupClose = 1
 
 " The filetype of empty .tex files defaults to 'plaintex'
 " instead of 'tex', which results in latex plugins not being loaded.

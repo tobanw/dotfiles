@@ -38,6 +38,9 @@
     ~/.vim/ftplugin:
       create: true
       path: vim/ftplugin/
+    ~/.config/pylintrc:
+      create: true
+      path: pylintrc
     ~/.config/liquidpromptrc:
       create: true
       path: liquidpromptrc
