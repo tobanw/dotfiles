@@ -26,7 +26,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 # set browser (used by rtv, urlscan)
-export BROWSER=qutebrowser
+#export BROWSER=qutebrowser
 
 # rtv url hinter/extracter
 export RTV_URLVIEWER=urlscan

@@ -16,12 +16,12 @@ general {
 
 
 order += "arch_updates"
-order += "weather_yahoo"
 order += "cmus"
+order += "weather_yahoo"
 order += "volume master"
-order += "wireless _first_"
+#order += "wireless _first_"
 order += "online_status"
-order += "battery 1"
+#order += "battery 1"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "tztime local"
@@ -35,7 +35,7 @@ arch_updates {
 
 weather_yahoo {
 		cache_timeout = 1800
-		woeid =	2467861
+		woeid =	2449435
 		units = "C"
 		format_today = "{icon}{temp}°"
 		format_forecast = "{icon}{high}°"
@@ -84,8 +84,9 @@ cpu_usage {
 
 cpu_temperature 0 {
 		format = "%degrees°C"
-		#path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
-		path = "/sys/class/thermal/thermal_zone1/temp"
+		#path = "/sys/class/hwmon/hwmon1/temp1_input"
+		#path = "/sys/class/thermal/thermal_zone1/temp"
+		path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp2_input"
 		max_threshold = 75
 }
 
