@@ -40,6 +40,9 @@ export PATH="$HOME/.local/bin:$PATH"
 # zplug directory
 export ZPLUG_HOME="$HOME/.local/share/zplug"
 
+# diff program for pacmatic/pacdiff
+export DIFFPROG="/usr/bin/nvim -d"
+
 # set location of weechat config
 export WEECHAT_HOME="$HOME/.config/weechat"
 
@@ -121,8 +124,8 @@ zplug load
 #===================================
 
 # some pacman/pacmatic convenience aliases
-alias pacup='sudo pacmatic -Syu'
-alias pacin='sudo pacmatic -S'
+alias pacup='sudo -E pacmatic -Syu'
+alias pacin='sudo -E pacmatic -S'
 alias pacinfo='pacman -Qi'
 # pacsearch is already provided
 
