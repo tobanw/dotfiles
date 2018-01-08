@@ -58,7 +58,7 @@ source /opt/google-cloud-sdk/path.zsh.inc
 
 # ruby gems (local installs)
 if which ruby >/dev/null && which gem >/dev/null; then
-	export PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+	export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 fi
 
 # shorthand for zsh calculator: e.g., `= 2.0/3`
