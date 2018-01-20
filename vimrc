@@ -8,6 +8,13 @@ endif
 "------------------------------------------------
 " vim-plug config
 
+" install vim-plug if not present
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Required:
 if has('nvim')
 	call plug#begin('~/.local/share/nvim/plugged')
@@ -16,15 +23,18 @@ else
 endif
 
 " My plugins:
+Plug 'justinmk/vim-dirvish' "lean file explorer
 Plug 'francoiscabrol/ranger.vim' "ranger integration
-Plug 'tpope/vim-fugitive' "git wrapper
 Plug 'junegunn/fzf.vim' "fuzzy finder
 Plug 'ervandew/supertab' "tab completion
 Plug 'neomake/neomake' "async syntax checker
 Plug 'ivanov/vim-ipython'
 Plug 'Raimondi/delimitMate' "auto insert matching delimiters
+Plug 'tpope/vim-fugitive' "git wrapper
 Plug 'tpope/vim-surround' "text-object mappings for delimiters
 Plug 'tpope/vim-repeat' "provides repeat for compatible plugins
+Plug 'tpope/vim-commentary' "mappings for commenting code
+Plug 'tpope/vim-capslock' "software capslock toggle: gC
 Plug 'vim-airline/vim-airline' "airline status bar
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'lervag/vimtex' "latex
@@ -91,13 +101,20 @@ set shiftwidth=4 "indenting motion <</>>
 set softtabstop=4 " backspace over expanded tabs
 
 "defaults, overridden by ftplugin
-set textwidth=0
+set textwidth=0 " max line length (0 disables)
 
 "lines to keep onscreen above/below cursor
 set scrolloff=3
 
-"hide menu bar, toolbar, scrollbar
+" Gvim: hide menu bar, toolbar, scrollbar
 set guioptions=ai
+
+"netrw (built-in file explorer)
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
 
 "vim-preview: browser priority
 let g:PreviewBrowsers = "qutebrowser,firefox,chromium"

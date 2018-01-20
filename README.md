@@ -13,25 +13,5 @@ For example, `dotbot` manages itself as a submodule here.
 To update them to their latest published version, run `git submodule update --remote`.
 (Note: this command could be added to the install script if desired, but I prefer to leave it as a manual update to avoid unexpected changes.)
 
-### Configs under management
-
-- `vim`
-- `zsh`
-- `git`
-- `liquidprompt`
-- `ranger`
-- `cmus`
-- `taskwarrior`
-- `zathura`
-- `tmux`
-- `bash`
-- `vifm`
-- `pentadactyl`
-- `latexmk`
-- `i3`
-- `xinit`
-- `dunst`
-
-
 [dotbot]: https://github.com/anishathalye/dotbot
 [blog]: http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
