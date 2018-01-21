@@ -6,10 +6,18 @@ nmap <leader>k :w<CR> :VimtexCompileSS<CR>
 " viewer
 let g:vimtex_view_method = 'zathura'
 
-" latexmk: use separate output files directory
+" latexmk: see latexmkrc
+" - use separate output files directory
+" - removed `-pdf` option so that it defers to the latexmkrc setting
 let g:vimtex_compiler_latexmk = {
     \ 'build_dir' : 'build',
-    \}
+	\ 'options' : [
+	\   '-verbose',
+	\   '-file-line-error',
+	\   '-synctex=1',
+	\   '-interaction=nonstopmode',
+	\ ],
+	\}
 
 " deoplete completions for vimtex
 if !exists('g:deoplete#omni#input_patterns')
