@@ -30,7 +30,7 @@ order += "tztime local"
 arch_updates {
 		cache_timeout = 3600
 		hide_if_zero = true
-		format = " {pacman}"
+		format = "{pacman} "
 }
 
 weather_yahoo {
@@ -51,14 +51,14 @@ cmus {
 }
 
 volume master {
-		format = " %volume"
-		format_muted = " (%volume)"
+		format = "%volume "
+		format_muted = "(%volume) "
 		device = "pulse"
 }
 
 wireless _first_ {
-        format_up = " %quality"
-        format_down = " down"
+        format_up = "%quality"
+        format_down = ""
 }
 
 online_status {
@@ -71,7 +71,7 @@ battery 1 {
 		integer_battery_capacity = true
 		last_full_capacity = true
 		status_chr = ""
-		status_bat = "⚡"
+		status_bat = ""
 		status_full = ""
 		threshold_type = time
 		low_threshold = 20
@@ -79,7 +79,7 @@ battery 1 {
 }
 
 cpu_usage {
-		format = " %usage"
+		format = "%usage "
 }
 
 cpu_temperature 0 {
@@ -95,7 +95,7 @@ tztime local {
 }
 
 disk "/" {
-        format = " %avail"
+        format = "%avail "
 		prefix_type = "custom"
 		low_threshold = 2
 		threshold_type = "gbytes_avail"
