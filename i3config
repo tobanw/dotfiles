@@ -41,6 +41,13 @@ bindsym $mod+t exec i3-sensible-terminal
 # hide window borders adjacent to screen edges
 hide_edge_borders both
 
+# hide titlebar for certain applications
+for_window [class="URxvt"] border pixel 4
+for_window [class="Firefox"] border pixel 2
+for_window [class="qutebrowser"] border pixel 2
+for_window [class="Vlc"] border pixel 2
+#for_window [class="Zathura"] border pixel 2
+
 # disable mouse warping when moving between displays
 mouse_warping none
 
