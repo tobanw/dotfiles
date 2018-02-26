@@ -45,7 +45,7 @@ fi
 xset r rate 280 40
 xset -b # no bell
 # display power saving (disable as workaround for autorandr)
-xset s off -dpms
+#xset s off -dpms
 
 # Initial display setup -- using autorandr for live swapping!
 #if [[ "$(xrandr | grep 'HDMI1 connected')" != "" ]]; then
@@ -63,14 +63,18 @@ exists() {
 exists feh && feh --bg-fill --no-fehbg --randomize ~/.wallpaper/* &
 
 # xautolock:
-#	* lock after duration (min) of inactivity (-n necessary for killer to work)
-#	* notify (sec) before locking
-#	* killer: suspend after an additional duration (min)
-#		* `-killtime 120 -killer "systemctl suspend" \`
-#	* don't lock if mouse in top right corner
+# * lock after duration (min) of inactivity (-n necessary for killer to work)
+# * notify (sec) before locking
+# * killer:
+# 	*suspend after an additional duration (min):
+# 		* `-killtime 20 -killer "systemctl suspend" \`
+# 	* power down displays after an additional duration (min)
+# 		* `-killtime 20 -killer "xset dpms force standby" \`
+# * don't lock if mouse in top right corner
 exists xautolock && xautolock -time 10 -locker "i3lock -n --color=000000" \
 	-notify 30 \
 	-notifier "notify-send --urgency=critical --expire-time=15000 'xautolock' 'LOCKING in 30s'" \
+	-killtime 20 -killer "xset dpms force standby" \
 	-corners 0-00 &
 
 # start up ssh-agent
