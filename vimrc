@@ -100,6 +100,10 @@ set tabstop=4 "tab is 4 characters
 set shiftwidth=4 "indenting motion <</>>
 set softtabstop=4 " backspace over expanded tabs
 
+"indentation: indent with tabs (variable width per editor), align with spaces
+set copyindent "copy indent from previous line
+set list listchars=tab:>-,trail:.,extends:>,precedes:< "display tabs and trailing spaces
+
 "defaults, overridden by ftplugin
 set textwidth=0 " max line length (0 disables)
 
