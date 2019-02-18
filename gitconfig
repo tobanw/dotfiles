@@ -1,18 +1,30 @@
+[alias]
+	s = status
+	d = diff
+	ds = diff --staged
+	co = checkout
+	l = log --graph --pretty=format:\"%C(yellow)%h%C(black)%C(auto)%d%x20%s%x20%x28%an%x29\"
+
 [user]
 	email = tobanw@gmail.com
 	name = Toban Wiebe
+
+[github]
+	user = tobanw
+
 [core]
 	editor = nvim
+
 [color]
 	ui = auto
+
 [push]
 	default = simple
+
 [filter "lfs"]
 	smudge = git-lfs smudge %f
 	required = true
 	clean = git-lfs clean %f
-[github]
-	user = tobanw
 
 # git pull rebases without flattening local merges
 # (instead of branch.autosetuprebase = always)
@@ -22,15 +34,20 @@
 # show info about submodules
 [status]
 	submoduleSummary = true
+
 [diff]
 	submodule = log
 	tool = vimdiff
+
 [merge]
 	tool = vimdiff
 	ff = false # no-ff: always create a merge commit
+
 [difftool "vimdiff"]
 	path = nvim
+
 [mergetool "vimdiff"]
 	path = nvim
+
 [difftool]
 	prompt = false
