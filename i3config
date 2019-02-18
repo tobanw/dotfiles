@@ -107,28 +107,28 @@ bindsym $mod+f fullscreen toggle
 # window utilities mode
 set $window_mode "window: [m]ove to [s]cratchpad, [p]arent [c]hild, [f]loat [space], layout sp[l]it [t]abbed" 
 mode $window_mode {
-		# move window to scratchpad
-		bindsym m move scratchpad
-		# show/hide scratchpad
-		bindsym s scratchpad show
+	# move window to scratchpad
+	bindsym m move scratchpad
+	# show/hide scratchpad
+	bindsym s scratchpad show
 
-		# change container layout (tabbed, toggle split)
-		bindsym t layout tabbed
-		bindsym l layout toggle split
+	# change container layout (tabbed, toggle split)
+	bindsym t layout tabbed
+	bindsym l layout toggle split
 
-		# toggle tiling / floating
-		bindsym f floating toggle
-		# change focus between tiling / floating windows
-		bindsym space focus mode_toggle
+	# toggle tiling / floating
+	bindsym f floating toggle
+	# change focus between tiling / floating windows
+	bindsym space focus mode_toggle
 
-		# focus the parent container
-		bindsym p focus parent
-		# focus the child container
-		bindsym c focus child
+	# focus the parent container
+	bindsym p focus parent
+	# focus the child container
+	bindsym c focus child
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 bindsym $mod+w mode $window_mode 
 
@@ -218,7 +218,7 @@ bindsym Mod1+Control+z exec i3lock --color=000000
 # finds out, if available)
 # py3status installed from AUR, dbus-notify uses notify-send rather than nagbar
 bar {
-		status_command py3status --dbus-notify
-		tray_output primary
-		position top
+	status_command py3status --dbus-notify
+	tray_output primary
+	position top
 }
