@@ -27,8 +27,8 @@ Plug 'justinmk/vim-dirvish' "lean file explorer
 Plug 'francoiscabrol/ranger.vim' "ranger integration
 Plug 'junegunn/fzf.vim' "fuzzy finder
 Plug 'ervandew/supertab' "tab completion
+"Plug 'vim-scripts/Smart-Tabs' "tabs to indent, spaces to align (conflicts with supertab)
 Plug 'neomake/neomake' "async syntax checker
-Plug 'ivanov/vim-ipython'
 Plug 'Raimondi/delimitMate' "auto insert matching delimiters
 Plug 'tpope/vim-fugitive' "git wrapper
 Plug 'tpope/vim-surround' "text-object mappings for delimiters
@@ -40,13 +40,12 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'lervag/vimtex' "latex
 Plug 'tmhedberg/SimpylFold' "python code folding
 Plug 'Konfekt/FastFold' "folding performance
-Plug 'tobanw/vim-preview' "markdown preview (fork of 'greyblake/vim-preview' with mathjax enabled)
 Plug 'morhetz/gruvbox' "256 color scheme
 
 " neovim only
 if has('nvim')
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'} "async completions
-	Plug 'JuliaEditorSupport/deoplete-julia'
+	"Plug 'JuliaEditorSupport/deoplete-julia'
 	Plug 'zchee/deoplete-jedi' "python completions
 	Plug 'rbgrouleff/bclose.vim' "neovim dependency for ranger.vim
 else " vim only
@@ -54,12 +53,12 @@ else " vim only
 	Plug 'davidhalter/jedi-vim' "python completions
 endif
 
-"Plug 'vim-scripts/Smart-Tabs' "tabs for indent, spaces for alignment
-" Smart-Tabs conflicts with supertab
 
 " Discard pile
 "Plug 'Shougo/unite.vim'
 "Plug 'ardagnir/vimbed'
+"Plug 'ivanov/vim-ipython'
+"Plug 'tobanw/vim-preview' "markdown preview (fork of 'greyblake/vim-preview' with mathjax enabled)
 
 " Required:
 call plug#end()
@@ -119,9 +118,6 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
-
-"vim-preview: browser priority
-let g:PreviewBrowsers = "qutebrowser,firefox,chromium"
 
 "airline
 set laststatus=2
