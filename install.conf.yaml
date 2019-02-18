@@ -3,6 +3,7 @@
 - link:
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
+    ~/.zshenv: zshenv
     ~/.tmux.conf: tmux.conf
     ~/.taskrc: taskrc
     ~/.xinitrc: xinitrc
@@ -59,6 +60,9 @@
     ~/.config/cmus/cmus-status-display:
       create: true
       path: cmus-status-display
+    ~/.config/tridactyl/tridactylrc:
+      create: true
+      path: tridactylrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
