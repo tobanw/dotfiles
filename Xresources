@@ -1,3 +1,6 @@
+Xft.lcdfilter: lcddefault
+
+! XTERM config
 ! scrollback buffer
 xterm*savelines: 8192
 
@@ -8,18 +11,49 @@ xterm*reverseVideo: on
 xterm*faceName: Inconsolata
 xterm*faceSize: 14
 
-Xft.lcdfilter: lcddefault
 
-! urxvt config
+! URXVT config
 URxvt*font: xft:Inconsolata:pixelsize=18:antialias=true:hinting=true,xft:Monospace
-! dark background
-URxvt.reverseVideo: on
 ! scrollback buffer
 URxvt.saveLines: 8192
 URxvt.scrollBar: off
+! prepackaged perl extensions
+URxvt.perl-ext-common: default
+
+! COLORS
+! dark background
+URxvt.reverseVideo: on
 ! fix blue to be same as xterm
 URxvt.color12: rgb:5c/5c/ff
 ! fix other blue to be readable (e.g., wildcard color)
 URxvt.color4: rgb:00/66/cc
-! prepackaged perl extensions
-URxvt.perl-ext-common: default
+
+!gruvbox colorscheme: comment out above color settings to use
+! hard contrast: *background: #1d2021
+!URxvt*background: #282828
+! soft contrast: *background: #32302f
+!URxvt*foreground: #ebdbb2
+! Black + DarkGrey
+!URxvt*color0:  #282828
+!URxvt*color8:  #928374
+! DarkRed + Red
+!URxvt*color1:  #cc241d
+!URxvt*color9:  #fb4934
+! DarkGreen + Green
+!URxvt*color2:  #98971a
+!URxvt*color10: #b8bb26
+! DarkYellow + Yellow
+!URxvt*color3:  #d79921
+!URxvt*color11: #fabd2f
+! DarkBlue + Blue
+!URxvt*color4:  #458588
+!URxvt*color12: #83a598
+! DarkMagenta + Magenta
+!URxvt*color5:  #b16286
+!URxvt*color13: #d3869b
+! DarkCyan + Cyan
+!URxvt*color6:  #689d6a
+!URxvt*color14: #8ec07c
+! LightGrey + White
+!URxvt*color7:  #a89984
+!URxvt*color15: #ebdbb2
