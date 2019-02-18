@@ -17,7 +17,8 @@ general {
 
 order += "arch_updates"
 order += "cmus"
-order += "weather_yahoo"
+order += "dropboxd_status"
+#order += "weather_yahoo"
 order += "volume master"
 #order += "wireless _first_"
 order += "online_status"
