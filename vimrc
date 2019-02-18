@@ -36,6 +36,7 @@ Plug 'tpope/vim-repeat' "provides repeat for compatible plugins
 Plug 'tpope/vim-commentary' "mappings for commenting code
 Plug 'tpope/vim-capslock' "software capslock toggle: gC
 Plug 'vim-airline/vim-airline' "airline status bar
+Plug 'RRethy/vim-illuminate' "highlight instances of word under cursor
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'lervag/vimtex' "latex
 Plug 'tmhedberg/SimpylFold' "python code folding
@@ -47,7 +48,10 @@ if has('nvim')
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'} "async completions
 	"Plug 'JuliaEditorSupport/deoplete-julia'
 	Plug 'zchee/deoplete-jedi' "python completions
+	Plug 'vigemus/iron.nvim' " repl integration using neovim terminal
 	Plug 'rbgrouleff/bclose.vim' "neovim dependency for ranger.vim
+	" markdown renderer: if you don't have nodejs and yarn, use pre build
+	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 else " vim only
 	Plug 'Shougo/neocomplete.vim'
 	Plug 'davidhalter/jedi-vim' "python completions
@@ -109,6 +113,19 @@ set textwidth=0 " max line length (0 disables)
 "lines to keep onscreen above/below cursor
 set scrolloff=3
 
+"window navigation with Ctrl+h/j/k/l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+"natural split opening
+set splitright
+set splitbelow
+
+"terminal mode: esc to exit
+tnoremap <Esc> <C-\><C-n>
+
 " Gvim: hide menu bar, toolbar, scrollbar
 set guioptions=ai
 
@@ -138,9 +155,28 @@ let g:tex_flavor='latex'
 
 "neomake
 "auto-lint on write
-autocmd! BufWritePost * Neomake
+call neomake#configure#automake('w')
 "choose syntax checkers
 let g:neomake_python_enabled_makers = ['pylint']
 
 "deoplete
 let g:deoplete#enable_at_startup = 1
+
+"iron.nvim: send code chunks to repl
+"send motion
+nmap yx <Plug>(iron-send-motion)
+"send line (and put cursor at beginning of next line)
+nmap yxx ^<Plug>(iron-send-motion)$j^
+"send selection (and put cursor at beginning of next line)
+vmap <Enter> <Plug>(iron-send-motion)<Esc>j^
+
+lua << EOF
+local iron = require("iron")
+
+iron.core.set_config{
+	preferred = {
+		python = "ipython"
+	},
+	repl_open_cmd = "70vsplit"
+}
+EOF
