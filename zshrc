@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/toban/.zshrc'
@@ -64,6 +64,8 @@ zplug zsh-users/zsh-syntax-highlighting
 # notifications for long-running commands
 zplug marzocchi/zsh-notify
 
+# extended completions
+zplug zsh-users/zsh-completions
 # enhanced vi mode
 zplug plugins/vi-mode, from:oh-my-zsh
 # taskwarrior completions
@@ -83,6 +85,10 @@ fi
 
 # source plugins and add commands to PATH
 zplug load
+
+
+# for zsh-completions plugin to handle pip3
+compctl -K _pip_completion pip3
 
 
 #===================================
@@ -107,5 +113,3 @@ alias mkdir='mkdir -p' # automatically make parents
 alias ls='ls -h --color=auto --group-directories-first'
 alias ll='ls -Alv'
 
-# ssh into tesla server with compatible terminal emulator
-alias tesla='TERM=xterm ssh tesla'

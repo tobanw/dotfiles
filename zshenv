@@ -7,6 +7,8 @@ export TERMINAL=urxvt
 export EDITOR=nvim
 export VISUAL=nvim
 
+export XDG_CONFIG_DIR="$HOME/.config"
+
 # set browser (used by rtv, urlscan)
 #export BROWSER=qutebrowser
 
@@ -31,5 +33,7 @@ export WEECHAT_HOME="$HOME/.config/weechat"
 # Anaconda python: after system python
 export PATH="$PATH:/home/toban/utilities/anaconda3/bin"
 
-# Python packages: allows system python to load anaconda packages (for pylint)
-export PYTHONPATH="$PYTHONPATH:/home/toban/utilities/anaconda3/lib/python3.6/site-packages"
+# Python packages: allows system python to load anaconda packages (for pylint); system packages take precedence
+export PYTHONPATH="/usr/lib/python3.7/site-packages"
+# disabling due to conflict with qutebrowser: python tries to load the anaconda `typing` module, which is built into 3.7 now
+#export PYTHONPATH="$PYTHONPATH:/home/toban/utilities/anaconda3/lib/python3.6/site-packages"
