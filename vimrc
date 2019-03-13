@@ -154,10 +154,17 @@ let g:SuperTabContextDefaultCompletionType = "<c-n>"
 let g:tex_flavor='latex'
 
 "neomake
-"auto-lint on write
-call neomake#configure#automake('w')
+"auto-lint on read (after 1s) and write
+call neomake#configure#automake('rw', 1000)
 "choose syntax checkers
-let g:neomake_python_enabled_makers = ['pylint']
+let g:neomake_python_enabled_makers = ['pylint'] "anaconda or system package
+let g:neomake_julia_enabled_makers = ['lint'] "julia package: Lint.jl
+let g:neomake_r_enabled_makers = ['lintr'] "r package
+let g:neomake_javascript_enabled_makers = ['eslint'] "system package
+let g:neomake_markdown_enabled_makers = ['mdl'] "ruby gem
+let g:neomake_zsh_enabled_makers = ['zsh']
+let g:neomake_sql_enabled_makers = ['sqlint'] "system package
+let g:neomake_sh_enabled_makers = ['shellcheck'] "system package
 
 "deoplete
 let g:deoplete#enable_at_startup = 1
