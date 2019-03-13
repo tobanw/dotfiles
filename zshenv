@@ -37,3 +37,6 @@ export PATH="$PATH:/home/toban/utilities/anaconda3/bin"
 export PYTHONPATH="/usr/lib/python3.7/site-packages"
 # disabling due to conflict with qutebrowser: python tries to load the anaconda `typing` module, which is built into 3.7 now
 #export PYTHONPATH="$PYTHONPATH:/home/toban/utilities/anaconda3/lib/python3.6/site-packages"
+
+# Stan home (to call from Stan.jl)
+export CMDSTAN_HOME="$HOME/utilities/cmdstan-2.18.1"

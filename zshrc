@@ -33,7 +33,7 @@ function = {
 }
 
 # drop back down to parent ranger session instead of nested instance
-rg() {
+rr() {
 	if [ -z "$RANGER_LEVEL" ]
 	then
 		ranger
@@ -103,6 +103,7 @@ alias pacinfo='pacman -Qi'
 
 alias oldvim='/usr/bin/vim'
 alias vim='nvim'
+alias vimdiff='nvim -d'
 
 # -i for interactive. Prompts before overwriting/removing.
 alias cp='cp -i'
