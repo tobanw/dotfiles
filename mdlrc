@@ -1,0 +1,10 @@
+# mdl: markdown lint config
+
+verbose false
+show_kramdown_warnings true # additionally show kramdown warnings
+git_recurse true # only process git tracked files
+ignore_front_matter true # ignore valid YAML front matter
+
+# load up rules from style file
+style "#{Dir.home}/.config/markdown.style.rb"
+

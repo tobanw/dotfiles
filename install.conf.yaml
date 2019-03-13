@@ -42,6 +42,10 @@
     ~/.config/pylintrc:
       create: true
       path: pylintrc
+    ~/.mdlrc: mdlrc
+    ~/.config/markdown.style.rb:
+      create: true
+      path: markdown.style.rb
     ~/.config/liquidpromptrc:
       create: true
       path: liquidpromptrc
