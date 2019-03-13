@@ -164,11 +164,11 @@ let g:deoplete#enable_at_startup = 1
 
 "iron.nvim: send code chunks to repl
 "send motion
-nmap yx <Plug>(iron-send-motion)
+nmap ym <Plug>(iron-send-motion)
 "send line (and put cursor at beginning of next line)
-nmap yxx ^<Plug>(iron-send-motion)$j^
+nmap yx ^<Plug>(iron-send-motion)$j^
 "send selection (and put cursor at beginning of next line)
-vmap <Enter> <Plug>(iron-send-motion)<Esc>j^
+xmap <Enter> <Plug>(iron-send-motion)<Esc>j^
 
 lua << EOF
 local iron = require("iron")
