@@ -15,33 +15,37 @@ general {
 }
 
 
+order += "window_title_async"
 order += "arch_updates"
 order += "dropboxd_status"
-#order += "weather_yahoo"
-order += "volume master"
-#order += "wireless _first_"
 order += "online_status"
 order += "mpris"
+#order += "wireless _first_"
 #order += "battery 1"
-order += "cpu_usage"
-order += "cpu_temperature 0"
+order += "volume master"
+order += "sysdata"
+order += "keyboard_locks"
 order += "tztime local"
 
+sysdata {
+	format = "[\?color=cpu {cpu_usage}% ][\?color=mem {mem_used_percent}% ][\?color=temp {cpu_temp}°C]"
+	thresholds = {
+		'cpu': [(0, "good"), (15, "degraded"), (50, "bad")],
+		'mem': [(0, "good"), (60, "degraded"), (80, "bad")],
+		'temp': [(0, "good"), (50, "degraded"), (80, "bad")]
+	}
+}
+
+# only show if enabled
+keyboard_locks {
+    format = '\?color=good [\?if=num_lock NUM][\?soft  ]'
+    format += '[\?if=caps_lock CAPS][\?soft  ][\?if=scroll_lock SCR]'
+}
 
 arch_updates {
 	cache_timeout = 3600
 	hide_if_zero = true
 	format = "{pacman} "
-}
-
-weather_yahoo {
-	cache_timeout = 1800
-	woeid =	2449435
-	units = "C"
-	format_today = "{icon}{temp}°"
-	format_forecast = "{icon}{high}°"
-	forecast_include_today = true
-	forecast_text_separator = ""
 }
 
 mpris {
@@ -86,18 +90,6 @@ battery 1 {
 	threshold_type = time
 	low_threshold = 20
 	path = "/sys/class/power_supply/BAT1/uevent"
-}
-
-cpu_usage {
-	format = "%usage "
-}
-
-cpu_temperature 0 {
-	format = "%degrees°C"
-	#path = "/sys/class/hwmon/hwmon1/temp1_input"
-	#path = "/sys/class/thermal/thermal_zone1/temp"
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp2_input"
-	max_threshold = 75
 }
 
 tztime local {
