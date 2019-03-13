@@ -16,12 +16,12 @@ general {
 
 
 order += "arch_updates"
-order += "cmus"
 order += "dropboxd_status"
 #order += "weather_yahoo"
 order += "volume master"
 #order += "wireless _first_"
 order += "online_status"
+order += "mpris"
 #order += "battery 1"
 order += "cpu_usage"
 order += "cpu_temperature 0"
@@ -44,11 +44,13 @@ weather_yahoo {
 	forecast_text_separator = ""
 }
 
-cmus {
-	cache_timeout = 3
-	indicator_play = ""
-	indicator_pause = ""
-	indicator_stop = ""
+mpris {
+	format = "{state} {time}/{length} {title} - {artist}"
+	format_none = ""
+	player_priority = "[cmus, vlc]" # can display in format with {player}
+	#state_play = "" # FontAwesome can't handle a space after a character
+	#state_pause = ""
+	#state_stop = ""
 }
 
 dropboxd_status {
