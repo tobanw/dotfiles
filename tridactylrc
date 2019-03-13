@@ -1,4 +1,54 @@
+"dark theme
+colorscheme dark
+
+"set external editor
+set editorcmd urxvt -e nvim
+
+"custom bindings
 bind J tabnext
 bind K tabprev
 bind j scrollline +3
 bind k scrollline -3
+bind 0 tabfirst
+bind $ tablast
+
+"navigation
+set hintchars asdfwertjkuio
+set hintuppercase false
+set smoothscroll true
+set scrollduration 20
+
+"blacklist: defaults to ignore mode
+blacklistadd mail.google.com/mail
+blacklistadd inbox.google.com
+blacklistadd calendar.google.com
+blacklistadd keep.google.com
+blacklistadd drive.google.com
+blacklistadd docs.google.com
+blacklistadd photos.google.com
+blacklistadd riot.im/app
+
+
+"
+" Site-specific tweaks
+"
+
+"make gu take you back to subreddit from comments
+bindurl reddit.com gu urlparent 3
+
+" Comment toggler for Hacker News
+bind ;c hint -c [class*="expand"],[class="threadline"],[class="togg"]
+
+
+"
+" Search engines
+"
+
+" abbrev for ddg
+set searchurls.ddg https://duckduckgo.com/?q=
+
+"julia docs' built in search is bad
+set searchurls.julia https://www.google.com/search?q=site:http://docs.julialang.org/en/latest%20
+
+" tbp
+set searchurls.tpb https://thepiratebay.org/search/%s/0/99/0
