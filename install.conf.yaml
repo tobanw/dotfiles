@@ -12,6 +12,9 @@
     ~/.config/git/config:
       create: true
       path: gitconfig
+    ~/.config/git/ignore:
+      create: true
+      path: gitignore
     ~/.config/Xresources:
       create: true
       path: Xresources
