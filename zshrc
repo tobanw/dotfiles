@@ -90,6 +90,10 @@ zplug load
 # for zsh-completions plugin to handle pip3
 compctl -K _pip_completion pip3
 
+# fzf bindings (load after plugins)
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 
 #===================================
 # ALIASES

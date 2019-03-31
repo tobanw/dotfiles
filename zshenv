@@ -18,6 +18,14 @@ export XDG_CONFIG_DIR="$HOME/.config"
 # ripgrep config file
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_DIR/ripgreprc"
 
+# FZF
+# use ripgrep to list files: command-line args supercede ripgreprc and .ignore files
+# search hidden files but don't enter hidden dirs
+export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.*/'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# preview with syntax highlighting
+export FZF_DEFAULT_OPTS="--preview='(rougify {} || cat {}) 2> /dev/null | head -$LINES'"
+
 # rtv url hinter/extracter
 export RTV_URLVIEWER=urlscan
 
