@@ -7,6 +7,9 @@ export TERMINAL=urxvt
 export EDITOR=nvim
 export VISUAL=nvim
 
+# make shell vi-mode transitions faster (unit: hundredths of a second)
+export KEYTIMEOUT=1
+
 export XDG_CONFIG_DIR="$HOME/.config"
 
 # set browser (used by rtv, urlscan)
