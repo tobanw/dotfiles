@@ -15,6 +15,9 @@ export XDG_CONFIG_DIR="$HOME/.config"
 # set browser (used by rtv, urlscan)
 #export BROWSER=qutebrowser
 
+# ripgrep config file
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_DIR/ripgreprc"
+
 # rtv url hinter/extracter
 export RTV_URLVIEWER=urlscan
 

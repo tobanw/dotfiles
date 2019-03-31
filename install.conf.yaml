@@ -15,6 +15,9 @@
     ~/.config/git/ignore:
       create: true
       path: gitignore
+    ~/.config/ripgreprc:
+      create: true
+      path: ripgreprc
     ~/.config/Xresources:
       create: true
       path: Xresources

@@ -1,0 +1,16 @@
+ # Don't let ripgrep vomit really long lines to my terminal.
+--max-columns=150
+
+# ignore case unless the search pattern contains any uppercase letters
+--smart-case
+
+# follow symlinks
+--follow
+
+# can't get this to work: search hidden files, not hidden dirs (except some)
+#--hidden
+#--glob=!.*/*
+# because ! excludes the glob, but without ! it exclusively searches within the glob
+#--glob=.config/*
+
+# see ~/.ignore for blacklist
