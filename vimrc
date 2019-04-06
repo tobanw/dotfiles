@@ -94,6 +94,10 @@ colorscheme gruvbox
 "yank to end of line
 nnoremap Y y$
 
+"ignore case unless caps used
+set ignorecase
+set smartcase
+
 "line numbering on
 set number
 
