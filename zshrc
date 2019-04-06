@@ -18,10 +18,6 @@ setopt noclobber
 
 # NOTE: export environment variables in .zshrc so they are available to i3 and dmenu
 
-# completions for google-cloud-sdk
-source /opt/google-cloud-sdk/completion.zsh.inc
-source /opt/google-cloud-sdk/path.zsh.inc
-
 # ruby gems (local installs)
 if which ruby >/dev/null && which gem >/dev/null; then
 	export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
@@ -51,29 +47,47 @@ rr() {
 # load zplug
 source /usr/share/zsh/scripts/zplug/init.zsh # AUR install location
 
-# 256 color terminal
-zplug chrissicool/zsh-256color
-# liquidprompt
-zplug nojhan/liquidprompt
 # sane options
 zplug willghatch/zsh-saneopt
+
+# 256 color terminal
+zplug chrissicool/zsh-256color
+
+# dependency for pure prompt
+zplug mafredri/zsh-async, from:github
+
+# pure prompt
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+
+# pure-compatible vim-mode extension
+zplug laurenkt/zsh-vimto
+
 # autosuggestions
 zplug zsh-users/zsh-autosuggestions
+
 # syntax highlighting
 zplug zsh-users/zsh-syntax-highlighting
+
 # notifications for long-running commands
 zplug marzocchi/zsh-notify
 
 # extended completions
 zplug zsh-users/zsh-completions
-# enhanced vi mode
-zplug plugins/vi-mode, from:oh-my-zsh
+
 # taskwarrior completions
 zplug plugins/taskwarrior, from:oh-my-zsh
+
 # all-in-one extracter
 zplug plugins/extract, from:oh-my-zsh
+
 # colored man pages
 zplug plugins/colored-man-pages, from:oh-my-zsh
+
+# liquidprompt (disable for pure)
+#zplug nojhan/liquidprompt
+
+# enhanced vi mode (disable for pure)
+#zplug plugins/vi-mode, from:oh-my-zsh
 
 # install new plugins
 if ! zplug check --verbose; then
@@ -86,13 +100,16 @@ fi
 # source plugins and add commands to PATH
 zplug load
 
-
 # for zsh-completions plugin to handle pip3
 compctl -K _pip_completion pip3
 
 # fzf bindings (load after plugins)
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
+# completions for google-cloud-sdk
+source /opt/google-cloud-sdk/completion.zsh.inc
+source /opt/google-cloud-sdk/path.zsh.inc
 
 
 #===================================
