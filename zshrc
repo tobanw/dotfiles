@@ -16,7 +16,7 @@ unsetopt beep
 setopt correct
 setopt noclobber
 
-# NOTE: export environment variables in .zshrc so they are available to i3 and dmenu
+# NOTE: export environment variables in .zshenv so they are available to i3 and dmenu
 
 # ruby gems (local installs)
 if which ruby >/dev/null && which gem >/dev/null; then
