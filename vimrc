@@ -117,6 +117,9 @@ set textwidth=0 " max line length (0 disables)
 "lines to keep onscreen above/below cursor
 set scrolloff=3
 
+"split diffs vertically
+set diffopt+=vertical
+
 "window navigation with Ctrl+h/j/k/l
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
