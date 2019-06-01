@@ -49,12 +49,12 @@ export DIFFPROG="/usr/bin/nvim -d"
 export WEECHAT_HOME="$XDG_CONFIG_DIR/weechat"
 
 # Anaconda python: after system python
-export PATH="$PATH:$TOOLS/anaconda3/bin"
+export PATH="$PATH:$HOME/utilities/anaconda3/bin"
 
 # Python packages: allows system python to load anaconda packages (for pylint); system packages take precedence
 export PYTHONPATH="/usr/lib/python3.7/site-packages"
 # disabling due to conflict with qutebrowser: python tries to load the anaconda `typing` module, which is built into 3.7 now
-#export PYTHONPATH="$PYTHONPATH:$TOOLS/anaconda3/lib/python3.6/site-packages"
+#export PYTHONPATH="$PYTHONPATH:$HOME/utilities/anaconda3/lib/python3.6/site-packages"
 
 # Stan home (to call from Stan.jl)
 export CMDSTAN_HOME="$TOOLS/cmdstan-2.18.1"

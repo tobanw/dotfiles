@@ -2,7 +2,7 @@
 if 0 | endif
 
 if &compatible
-  set nocompatible               " Be iMproved
+	set nocompatible               " Be iMproved
 endif
 
 "------------------------------------------------
@@ -10,9 +10,9 @@ endif
 
 " install vim-plug if not present
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+	silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+	     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Required:
@@ -63,6 +63,8 @@ endif
 "Plug 'ardagnir/vimbed'
 "Plug 'ivanov/vim-ipython'
 "Plug 'tobanw/vim-preview' "markdown preview (fork of 'greyblake/vim-preview' with mathjax enabled)
+"Plug 'francoiscabrol/ranger.vim' "ranger integration
+"Plug 'rbgrouleff/bclose.vim' "neovim dependency for ranger.vim
 
 " Required:
 call plug#end()
@@ -152,7 +154,7 @@ set laststatus=2
 let g:SuperTabDefaultCompletionType = "context"
 "tab goes down the list
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
-"auto-close the preview window after completing
+"auto-close the preview window after completing (or :pc[lose] manually)
 "let g:SuperTabClosePreviewOnPopupClose = 1
 
 " The filetype of empty .tex files defaults to 'plaintex'
