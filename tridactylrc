@@ -18,6 +18,9 @@ set hintuppercase false
 set smoothscroll true
 set scrollduration 20
 
+"make yy use canonical / short links on the 5 websites that support them
+bind yy clipboard yankshort
+
 "blacklist: defaults to ignore mode
 blacklistadd mail.google.com/mail
 blacklistadd inbox.google.com
@@ -33,10 +36,14 @@ blacklistadd riot.im/app
 " Site-specific tweaks
 "
 
+"only hint search results on Google
+bindurl www.google.com f hint -Jc .rc > .r > a
+bindurl www.google.com F hint -Jtc .rc>.r>a
+
 "make gu take you back to subreddit from comments
 bindurl reddit.com gu urlparent 3
 
-" Comment toggler for Hacker News
+"comment toggler for Hacker News
 bind ;c hint -c [class*="expand"],[class="threadline"],[class="togg"]
 
 
@@ -44,11 +51,11 @@ bind ;c hint -c [class*="expand"],[class="threadline"],[class="togg"]
 " Search engines
 "
 
-" abbrev for ddg
+"abbrev for ddg
 set searchurls.ddg https://duckduckgo.com/?q=
 
 "julia docs' built in search is bad
 set searchurls.julia https://www.google.com/search?q=site:http://docs.julialang.org/en/latest%20
 
-" tbp
+"tbp
 set searchurls.tpb https://thepiratebay.org/search/%s/0/99/0
