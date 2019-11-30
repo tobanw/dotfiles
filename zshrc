@@ -107,10 +107,6 @@ compctl -K _pip_completion pip3
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
-# completions for google-cloud-sdk
-source /opt/google-cloud-sdk/completion.zsh.inc
-source /opt/google-cloud-sdk/path.zsh.inc
-
 
 #===================================
 # ALIASES

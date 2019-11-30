@@ -9,6 +9,7 @@
     ~/.xinitrc: xinitrc
     ~/.bashrc: bashrc
     ~/.latexmkrc: latexmkrc
+    ~/.ignore: ignore
     ~/.config/git/config:
       create: true
       path: gitconfig

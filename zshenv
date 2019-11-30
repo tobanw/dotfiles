@@ -57,4 +57,4 @@ export PYTHONPATH="/usr/lib/python3.7/site-packages"
 #export PYTHONPATH="$PYTHONPATH:$HOME/utilities/anaconda3/lib/python3.6/site-packages"
 
 # Stan home (to call from Stan.jl)
-export CMDSTAN_HOME="$TOOLS/cmdstan-2.18.1"
+export CMDSTAN_HOME="$TOOLS/cmdstan-2.20.0"
