@@ -30,7 +30,7 @@
 # git pull rebases without flattening local merges
 # (instead of branch.autosetuprebase = always)
 [pull]
-	rebase = preserve
+	rebase = merges
 
 # show info about submodules
 [status]
