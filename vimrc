@@ -116,6 +116,9 @@ set list listchars=tab:>-,trail:.,extends:>,precedes:< "display tabs and trailin
 "defaults, overridden by ftplugin
 set textwidth=0 " max line length (0 disables)
 
+"don't doublespace when joining lines containing sentences
+set nojoinspaces
+
 "lines to keep onscreen above/below cursor
 set scrolloff=3
 
