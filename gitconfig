@@ -1,5 +1,6 @@
 [alias]
 	s = status
+	c = commit --verbose
 	d = diff
 	ds = diff --staged
 	co = checkout
