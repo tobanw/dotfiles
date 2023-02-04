@@ -93,6 +93,9 @@ let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
+"briefly highlight yanked region
+au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
+
 "yank to end of line
 nnoremap Y y$
 
