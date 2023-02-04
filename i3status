@@ -15,7 +15,7 @@ general {
 }
 
 
-order += "window_title_async"
+order += "window"
 order += "arch_updates"
 order += "dropboxd_status"
 order += "online_status"
