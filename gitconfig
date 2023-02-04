@@ -16,6 +16,7 @@
 [core]
 	editor = nvim
 	excludesfile = ~/.config/git/ignore
+	whitespace = trailing-space,space-before-tab
 
 [color]
 	ui = auto
@@ -24,9 +25,10 @@
 	default = simple
 
 [filter "lfs"]
-	smudge = git-lfs smudge %f
+	smudge = git-lfs smudge -- %f
 	required = true
-	clean = git-lfs clean %f
+	clean = git-lfs clean -- %f
+	process = git-lfs filter-process
 
 # git pull rebases without flattening local merges
 # (instead of branch.autosetuprebase = always)
@@ -40,10 +42,12 @@
 [diff]
 	submodule = log
 	tool = vimdiff
+	mnemonicprefix = true
 
 [merge]
 	tool = vimdiff
 	ff = false # no-ff: always create a merge commit
+	stat = true
 
 [difftool "vimdiff"]
 	path = nvim
