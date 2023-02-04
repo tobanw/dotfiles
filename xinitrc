@@ -62,6 +62,9 @@ exists() {
 # random wallpaper from ~/.wallpaper
 exists feh && feh --bg-fill --no-fehbg --randomize ~/.wallpaper/* &
 
+# enable numlock by default
+exists numlockx && numlockx on
+
 # xautolock:
 # * lock after duration (min) of inactivity (-n necessary for killer to work)
 # * notify (sec) before locking
