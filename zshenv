@@ -33,6 +33,10 @@ export FZF_DEFAULT_OPTS="--preview='(rougify {} || cat {}) 2> /dev/null | head -
 # rtv url hinter/extracter
 export RTV_URLVIEWER=urlscan
 
+# ruby gems (local installs)
+if which ruby >/dev/null && which gem >/dev/null; then
+	export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+fi
 
 # tools: programming language package dirs, etc
 export TOOLS="$HOME/.tools"
@@ -62,3 +66,8 @@ export PYTHONPATH="/usr/lib/python3.7/site-packages"
 
 # Stan home (to call from Stan.jl)
 export CMDSTAN_HOME="$TOOLS/cmdstan-2.20.0"
+
+# pnpm (Node package manager)
+export PNPM_HOME="/home/toban/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+

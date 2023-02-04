@@ -1,3 +1,6 @@
+# native profiler (call zprof at end of file)
+# zmodload zsh/zprof
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -17,11 +20,6 @@ setopt correct
 setopt noclobber
 
 # NOTE: export environment variables in .zshenv so they are available to i3 and dmenu
-
-# ruby gems (local installs)
-if which ruby >/dev/null && which gem >/dev/null; then
-	export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-fi
 
 # shorthand for zsh calculator: e.g., `= 2.0/3`
 function = {
@@ -130,4 +128,7 @@ alias rm='rm -i'
 alias mkdir='mkdir -p' # automatically make parents
 alias ls='ls -h --color=auto --group-directories-first'
 alias ll='ls -Alv'
+
+# end profiling
+# zprof
 
