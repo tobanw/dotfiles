@@ -15,6 +15,10 @@ export XDG_CONFIG_DIR="$HOME/.config"
 # set browser (used by rtv, urlscan)
 #export BROWSER=qutebrowser
 
+# zsh-autosuggestions plugin
+# suggest from history first, fall back to zsh completions
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
 # ripgrep config file
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_DIR/ripgreprc"
 
