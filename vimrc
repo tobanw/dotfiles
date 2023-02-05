@@ -24,7 +24,6 @@ endif
 
 " My plugins:
 Plug 'justinmk/vim-dirvish' "lean file explorer
-Plug 'francoiscabrol/ranger.vim' "ranger integration
 Plug 'junegunn/fzf.vim' "fuzzy finder
 Plug 'ervandew/supertab' "tab completion
 "Plug 'vim-scripts/Smart-Tabs' "tabs to indent, spaces to align (conflicts with supertab)
@@ -46,10 +45,12 @@ Plug 'morhetz/gruvbox' "256 color scheme
 " neovim only
 if has('nvim')
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'} "async completions
-	"Plug 'JuliaEditorSupport/deoplete-julia'
 	Plug 'zchee/deoplete-jedi' "python completions
-	Plug 'vigemus/iron.nvim' " repl integration using neovim terminal
-	Plug 'rbgrouleff/bclose.vim' "neovim dependency for ranger.vim
+
+	" repl integration using neovim terminal
+	" NOTE: needs nvim 0.5; 0.4.4 doesn't support `nvim_buf_set_extmark`
+	Plug 'hkupty/iron.nvim'
+
 	" markdown renderer: if you don't have nodejs and yarn, use pre build
 	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 else " vim only
@@ -185,20 +186,5 @@ let g:neomake_sh_enabled_makers = ['shellcheck'] "system package
 let g:deoplete#enable_at_startup = 1
 
 "iron.nvim: send code chunks to repl
-"send motion
-nmap ym <Plug>(iron-send-motion)
-"send line (and put cursor at beginning of next line)
-nmap yx ^<Plug>(iron-send-motion)$j^
-"send selection (and put cursor at beginning of next line)
-xmap <Enter> <Plug>(iron-send-motion)<Esc>j^
+luafile $XDG_CONFIG_DIR/nvim/plugins.lua
 
-lua << EOF
-local iron = require("iron")
-
-iron.core.set_config{
-	preferred = {
-		python = "ipython"
-	},
-	repl_open_cmd = "70vsplit"
-}
-EOF
